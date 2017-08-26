@@ -28,23 +28,29 @@ services:
             - default
 
     maestro-backend:
-        image: instainer/parse-server
+        image: node:alpine
+        command: node /maestro/backend/server.js
         restart: always
         ports:
             - 3308:3308
         links:
             - mongo-db
-        environment:
-            APP_ID: maestro
-            MASTER_KEY: orange # use docker secret
-            # FILE_KEY: optionalFileKey
+        volumes:
+            - ../../src/backend:/maestro/backend
+            - ../../node_modules:/maestro/node_modules
+        # environment:
+        #     APP_ID: maestro
+        #     MASTER_KEY: orange # use docker secret
+        #     # FILE_KEY: optionalFileKey
 
     mongo-db:
         image: mongo
         restart: always
-        # volumes:
-            # - database_data:/var/lib/mongo
-            # - ../../data/mongo.data:/docker-entrypoint-initdb.d/mongo.data
+        ports:
+            - 27017:27017
+        volumes:
+            - database_data:/data/db
+            # - ../../data/db:/docker-entrypoint-initdb.d/db
 
 
 volumes:
