@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+    maestro-web:
+        image: abiosoft/caddy
+        restart: always
+        stdin_open: true
+        tty: true
+        ports:
+            - 80:80
+        links:
+            - maestro-backend
+        volumes:
+            - ./caddy/Caddyfile:/etc/Caddyfile
+            - caddy_data:/etc/caddycerts
+            - ../../src:/var/www/maestro
+            - ../../logs/caddy:/var/log/caddy
+            - ../../logs/api:/var/log/api
+        environment:
+            CADDYPATH: /etc/caddycerts
+            MAESTRO_DEBUG: 1
+            # MAESTRO_API_HOST: 127.0.0.1
+            # MAESTRO_API_PORT: 3308
+            # MAESTRO_API_NAME: maestro
+            # MAESTRO_API_USERNAME: maestro
+            # MAESTRO_API_PASSWORD:
+        networks:
+            - default
+
+    maestro-backend:
+        image: instainer/parse-server
+        restart: always
+        ports:
+            - 3308:3308
+        links:
+            - mongo-db
+        environment:
+            APP_ID: maestro
+            MASTER_KEY: orange # use docker secret
+            # FILE_KEY: optionalFileKey
+
+    mongo-db:
+        image: mongo
+        restart: always
+        # volumes:
+            # - database_data:/var/lib/mongo
+            # - ../../data/mongo.data:/docker-entrypoint-initdb.d/mongo.data
+
+
+volumes:
+    caddy_data:
+    database_data:
