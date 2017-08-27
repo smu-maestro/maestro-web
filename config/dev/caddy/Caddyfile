@@ -6,10 +6,10 @@ gzip
 log /var/log/caddy/access.log
 errors /var/log/caddy/error.log
 
-#rewrite /api {
-#	regexp .*
-#	to localhost:3308/parse?{query}
-#}
+rewrite /parse {
+	regexp .*
+	to localhost:3308/parse?{query}
+}
 
 rewrite {
 	to {path}/ {path}

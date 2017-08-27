@@ -1,6 +1,6 @@
 /* Example code only! */
-Parse.initialize("maestro");
-Parse.serverURL = 'http://maestro.dev/parse';
+Parse.initialize("maestro", "orange");
+Parse.serverURL = 'http://maestro.dev:3308/parse';
 
 var TestObject = Parse.Object.extend("TestObject");
 var obj = new TestObject();
@@ -23,4 +23,4 @@ var app = new Vue({
             }
         });
     }
-})
+});

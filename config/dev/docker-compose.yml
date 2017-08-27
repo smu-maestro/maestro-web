@@ -38,10 +38,15 @@ services:
         volumes:
             - ../../src/backend:/maestro/backend
             - ../../node_modules:/maestro/node_modules
-        # environment:
-        #     APP_ID: maestro
-        #     MASTER_KEY: orange # use docker secret
-        #     # FILE_KEY: optionalFileKey
+            - ../../logs/parse:/maestro/logs/parse
+        environment:
+            PORT: 3308
+            PARSE_SERVER_APPLICATION_ID: maestro
+            PARSE_SERVER_MASTER_KEY: orange
+            PARSE_SERVER_DATABASE_URI: mongodb://mongo-db:27017/dev
+            PARSE_SERVER_URL: http://maestro.dev/parse
+            PARSE_SERVER_LOGS_FOLDER: /maestro/logs/parse
+            VERBOSE: 1
 
     mongo-db:
         image: mongo
@@ -51,7 +56,6 @@ services:
         volumes:
             - database_data:/data/db
             # - ../../data/db:/docker-entrypoint-initdb.d/db
-
 
 volumes:
     caddy_data:
