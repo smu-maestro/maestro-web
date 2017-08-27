@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker-compose -f $COMPOSE_FILE -p $DOCKER_NAME down --rmi local
+docker-compose -f $1 down --rmi local

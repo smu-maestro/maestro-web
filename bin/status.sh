@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 WEB_UP=false;
+BACKEND_UP=false;
 DB_UP=false;
 
-printf "\nCompose file: $COMPOSE_FILE\n";
-printf "Compose group: $DOCKER_NAME\n\n";
-
-if docker-compose -f $COMPOSE_FILE -p $DOCKER_NAME exec web echo "Hello" >/dev/null 2>&1; then
+if docker-compose -f $1 exec maestro-web echo "Hello" >/dev/null 2>&1; then
     WEB_UP=true
 fi
-if docker-compose -f $COMPOSE_FILE -p $DOCKER_NAME exec database echo "Hello" >/dev/null 2>&1; then
+if docker-compose -f $1 exec maestro-backend echo "Hello" >/dev/null 2>&1; then
+    BACKEND_UP=true
+fi
+if docker-compose -f $1 exec mongo-db echo "Hello" >/dev/null 2>&1; then
     DB_UP=true
 fi
 printf "[x] = running\n\n";
@@ -18,10 +19,16 @@ else
     printf "[ ]  Web";
 fi
 printf "\n";
-if $DB_UP; then
-    printf "[x]  Database";
+if $BACKEND_UP; then
+    printf "[x]  Backend";
 else
-    printf "[ ]  Database";
+    printf "[ ]  Backend";
+fi
+printf "\n";
+if $DB_UP; then
+    printf "[x]  Mongo";
+else
+    printf "[ ]  Mongo";
 fi
 printf "\n\n";
 exit;

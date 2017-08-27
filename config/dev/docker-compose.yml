@@ -19,11 +19,6 @@ services:
         environment:
             CADDYPATH: /etc/caddycerts
             MAESTRO_DEBUG: 1
-            # MAESTRO_API_HOST: 127.0.0.1
-            # MAESTRO_API_PORT: 3308
-            # MAESTRO_API_NAME: maestro
-            # MAESTRO_API_USERNAME: maestro
-            # MAESTRO_API_PASSWORD:
         networks:
             - default
 
@@ -54,8 +49,8 @@ services:
         ports:
             - 27017:27017
         volumes:
+            - ../../data:/data
             - database_data:/data/db
-            # - ../../data/db:/docker-entrypoint-initdb.d/db
 
 volumes:
     caddy_data:
