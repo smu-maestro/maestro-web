@@ -1,46 +1,56 @@
 version: '3'
 
 services:
-    web:
-        image: abiosoft/caddy:php
+    maestro-web:
+        image: abiosoft/caddy
         restart: always
         stdin_open: true
         tty: true
         ports:
             - 80:80
-            - 443:443
         links:
-            - database
+            - maestro-backend
         volumes:
             - ./caddy/Caddyfile:/etc/Caddyfile
-            - ./php/php.ini:/etc/php7/php.ini
             - caddy_data:/etc/caddycerts
-            - ../../build:/var/www/uomi
+            - ../../src:/var/www/maestro
             - ../../logs/caddy:/var/log/caddy
-            - ../../logs/php:/var/log/php7
             - ../../logs/api:/var/log/api
         environment:
             CADDYPATH: /etc/caddycerts
-            UOMI_DEBUG: 0
-            UOMI_DB_HOST: 127.0.0.1
-            UOMI_DB_PORT: 3306
-            UOMI_DB_NAME: uomi
-            UOMI_DB_USERNAME: uomi
-            UOMI_DB_PASSWORD: repress-glimmer-trigram-uncoil
+            MAESTRO_DEBUG: 1
+        networks:
+            - default
 
-    database:
-        image: mysql:latest
+    maestro-backend:
+        image: node:alpine
+        command: node /maestro/backend/server.js
         restart: always
-        expose:
-            - 3306
+        ports:
+            - 3308:3308
+        links:
+            - mongo-db
         volumes:
-            - database_data:/var/lib/mysql
-            - ../../data/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+            - ../../src/backend:/maestro/backend
+            - ../../node_modules:/maestro/node_modules
+            - ../../logs/parse:/maestro/logs/parse
         environment:
-            MYSQL_ROOT_PASSWORD: grandma-ill-fray-parch
-            MYSQL_DATABASE: uomi
-            MYSQL_USER: uomi
-            MYSQL_PASSWORD: repress-glimmer-trigram-uncoil
+            PORT: 3308
+            PARSE_SERVER_APPLICATION_ID: maestro
+            PARSE_SERVER_MASTER_KEY: orange
+            PARSE_SERVER_DATABASE_URI: mongodb://mongo-db:27017/dev
+            PARSE_SERVER_URL: http://maestro.gdn/parse
+            PARSE_SERVER_LOGS_FOLDER: /maestro/logs/parse
+            VERBOSE: 1
+
+    mongo-db:
+        image: mongo
+        restart: always
+        ports:
+            - 27017:27017
+        volumes:
+            - ../../data:/data
+            - database_data:/data/db
 
 volumes:
     caddy_data:

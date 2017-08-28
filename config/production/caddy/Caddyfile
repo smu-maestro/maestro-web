@@ -1,23 +1,16 @@
-uomi.cash:443
+maestro.gdn:80
 
-root /var/www/uomi/public
-tls pherz@smu.edu
+root /var/www/maestro/public
+tls off
 gzip
 log /var/log/caddy/access.log
 errors /var/log/caddy/error.log
 
-rewrite /api {
+rewrite /parse {
 	regexp .*
-	to ../api.php?{query}
+	to localhost:3308/parse?{query}
 }
 
-rewrite / {
-	regexp .*
-	ext /
-	to {path} {path}/ /index.html
+rewrite {
+	to {path}/ {path}
 }
-
-
-
-fastcgi ../api.php 0.0.0.0:9000 php
-startup php-fpm7
