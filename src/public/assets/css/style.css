@@ -85,14 +85,14 @@ a:link, a:active, a:visited {
 	text-align: center;
 }
 
-.default-button {
+.default-button, a.default-button {
 	text-transform: uppercase;
 	background: #000;
 	color: #fff;
 	padding: 0.5rem;
 }
 
-.invert .default-button {
+.invert .default-button, .invert a.default-button {
 	background: #fff;
 	color: #000;
 }
