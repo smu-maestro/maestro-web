@@ -14,7 +14,7 @@
   },
   "scripts": {
     "docker:up": "./bin/up.sh $npm_package_config_docker_file",
-    "docker:up-prod": "./bin/up.sh $npm_package_config_docker_file_prod",
+    "docker:up-prod": "./bin/up-prod.sh $npm_package_config_docker_file_prod",
     "docker:suspend": "./bin/suspend.sh $npm_package_config_docker_file",
     "docker:ssh-web": "./bin/ssh.sh $npm_package_config_docker_file maestro-web || true",
     "docker:ssh-backend": "./bin/ssh.sh $npm_package_config_docker_file maestro-backend || true",

@@ -13,4 +13,7 @@ after_script:
     - npm run docker:destroy
 
 after_success:
+    - pip install --user awscli
+    - export PATH=$PATH:$HOME/.local/bin
+    - eval $(awc ecr get-login --region us-west-2c)
     - 'if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run docker:up-prod fi'
