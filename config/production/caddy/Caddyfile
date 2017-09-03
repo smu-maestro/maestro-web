@@ -1,4 +1,5 @@
-maestro.gdn:80
+# maestro.gdn:80
+ec2-34-212-238-105.us-west-2.compute.amazonaws.com:80
 
 root /var/www/maestro/public
 tls off

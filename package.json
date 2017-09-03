@@ -9,17 +9,26 @@
     "vue-resource": "^1.3.4"
   },
   "config": {
-	  "docker_file": "./config/dev/docker-compose.yml"
+    "docker_file": "./config/dev/docker-compose.yml",
+    "docker_file_prod": "./config/production/docker-compose.yml"
   },
   "scripts": {
-	  "docker:up": "./bin/up.sh $npm_package_config_docker_file",
-	  "docker:suspend": "./bin/suspend.sh $npm_package_config_docker_file",
-	  "docker:ssh-web": "./bin/ssh.sh $npm_package_config_docker_file maestro-web || true",
-	  "docker:ssh-backend": "./bin/ssh.sh $npm_package_config_docker_file maestro-backend || true",
-	  "docker:ssh-mongo": "./bin/ssh-mongo.sh $npm_package_config_docker_file mongo-db || true",
-	  "docker:resume": "./bin/resume.sh $npm_package_config_docker_file",
-	  "docker:halt": "./bin/halt.sh $npm_package_config_docker_file",
-	  "docker:destroy": "./bin/destroy.sh $npm_package_config_docker_file",
-	  "status": "./bin/status.sh $npm_package_config_docker_file"
+    "docker:up": "./bin/up.sh $npm_package_config_docker_file",
+    "docker:up-prod": "./bin/up-prod.sh $npm_package_config_docker_file_prod",
+    "docker:suspend": "./bin/suspend.sh $npm_package_config_docker_file",
+    "docker:ssh-web": "./bin/ssh.sh $npm_package_config_docker_file maestro-web || true",
+    "docker:ssh-backend": "./bin/ssh.sh $npm_package_config_docker_file maestro-backend || true",
+    "docker:ssh-mongo": "./bin/ssh-mongo.sh $npm_package_config_docker_file mongo-db || true",
+    "docker:resume": "./bin/resume.sh $npm_package_config_docker_file",
+    "docker:halt": "./bin/halt.sh $npm_package_config_docker_file",
+    "docker:destroy": "./bin/destroy.sh $npm_package_config_docker_file",
+    "status": "./bin/status.sh $npm_package_config_docker_file",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "jest": {
+    "verbose": true
   }
 }

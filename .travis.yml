@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+    - "7.8.0"
+
+cache:
+    - node_modules
+
+scripts:
+    - npm run docker:up
+    - npm test
+
+after_script:
+    - npm run docker:destroy
+
+after_success:
+    - ./bin/push-latest.sh
