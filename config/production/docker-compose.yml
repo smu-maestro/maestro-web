@@ -1,16 +1,6 @@
 version: '3'
 
 services:
-    maestro-master:
-        build: .
-        depends_on:
-            - maestro-web
-            - maestro-backend
-            - mongo-db
-        image: maestro/web:latest
-        ports:
-            - 80:80
-
     maestro-web:
         image: abiosoft/caddy
         restart: always
