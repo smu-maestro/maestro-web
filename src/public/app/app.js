@@ -8,7 +8,7 @@ var obj = new TestObject();
 var app = new Vue({
     el: '#app',
     data: {
-        message: 'Vue Works!'
+        message: 'Hello!'
     },
     mounted: function () {
         obj.save({

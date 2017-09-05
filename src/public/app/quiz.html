@@ -1,0 +1,30 @@
+<!-- Used this to learn Vuejs since I'm new to Vue
+https://medium.com/@rap2h/create-a-quiz-with-vue-js-ed1e8e0e8294
+-->
+
+<div id="quiz">
+<h1>{{ quiz.title }}</h1>
+    <div v-for="(question, i) in quiz.questions">
+        <div v-show="i === questionIndex">
+            <h2>{{ question.text }}</h2>
+            <ol>
+                <li v-for="answer in question.answers">
+                    <label>
+                        <input type="radio" 
+                                v-bind:value="answer.correct" 
+                                v-bind:name="i" 
+                                v-model="userAnswers[i]" > {{answer.text}}
+                    </label>
+                </li>
+            </ol>
+            <button v-if="questionIndex > 0" v-on:click="prev"> prev </button>
+            <button v-on:click="next"> next </button>
+        </div>
+    </div>
+    <div v-show="questionIndex ===  quiz.questions.length">
+        <h2> You finished the quiz </h2>
+        <p> Your score is {{ score() }}/{{quiz.questions.length}} </p>
+    </div>
+</div><!-- #app -->
+<script src="https://unpkg.com/vue"></script>
+<script src="./quiz.js"></script>
