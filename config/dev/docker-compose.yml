@@ -5,15 +5,17 @@ services:
         image: abiosoft/caddy
         restart: always
         stdin_open: true
+        # command: npm run dev
         tty: true
         ports:
-            - 80:80
+            - 4200:4200
         links:
             - maestro-backend
         volumes:
             - ./caddy/Caddyfile:/etc/Caddyfile
             - caddy_data:/etc/caddycerts
-            - ../../src:/var/www/maestro
+            # - ../../src:/var/www/maestro
+            - ../../src/public/app/config:/var/www/maestro/public
             - ../../logs/caddy:/var/log/caddy
             - ../../logs/api:/var/log/api
         environment:
@@ -39,7 +41,7 @@ services:
             PARSE_SERVER_APPLICATION_ID: maestro
             PARSE_SERVER_MASTER_KEY: orange
             PARSE_SERVER_DATABASE_URI: mongodb://mongo-db:27017/dev
-            PARSE_SERVER_URL: http://maestro.dev/parse
+            PARSE_SERVER_URL: http://maestro.gdn/parse
             PARSE_SERVER_LOGS_FOLDER: /maestro/logs/parse
             VERBOSE: 1
 

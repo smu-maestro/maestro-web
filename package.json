@@ -26,7 +26,8 @@
     "test": "jest"
   },
   "devDependencies": {
-    "jest": "^20.0.4"
+    "jest": "^20.0.4",
+    "vue-dev-server": "^2.0.4"
   },
   "jest": {
     "verbose": true
