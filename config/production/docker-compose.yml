@@ -10,14 +10,16 @@ services:
         image: maestro/web:latest
         ports:
             - 80:80
+            - 4200:4200
 
     maestro-web:
         image: abiosoft/caddy
         restart: always
         stdin_open: true
+        command: npm run dev
         tty: true
         ports:
-            - 80:80
+            - 4200:4200
         links:
             - maestro-backend
         volumes:
