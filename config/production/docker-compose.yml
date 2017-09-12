@@ -5,10 +5,9 @@ services:
         image: abiosoft/caddy
         restart: always
         stdin_open: true
-        command: npm run dev
         tty: true
         ports:
-            - 4200:4200
+            - 80:80
         links:
             - maestro-backend
         volumes:
