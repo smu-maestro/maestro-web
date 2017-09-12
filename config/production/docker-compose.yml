@@ -1,25 +1,13 @@
 version: '3'
 
 services:
-    maestro-master:
-        build: .
-        depends_on:
-            - maestro-web
-            - maestro-backend
-            - mongo-db
-        image: maestro/web:latest
-        ports:
-            - 80:80
-            - 4200:4200
-
     maestro-web:
         image: abiosoft/caddy
         restart: always
         stdin_open: true
-        command: npm run dev
         tty: true
         ports:
-            - 4200:4200
+            - 80:80
         links:
             - maestro-backend
         volumes:
