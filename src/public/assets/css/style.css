@@ -19,6 +19,10 @@ a:link, a:active, a:visited {
 	color: #fff;
 }
 
+.inline li {
+    display: inline;
+}
+
 .invert {
 	background-color: #000;
 	color: #fff;
