@@ -10,17 +10,17 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<nav class="navbar navbar-toggleable-md navbar-light bg-faded">	
+		<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav inline">
 					<li>
 						<a class="navbar-brand" href="#"><img src="assets/img/maestro-m-icon.svg" width="40" aria-label="Maestro"></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">About</a>
+						<a class="nav-link" href="#about">About</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Team</a>
+						<a class="nav-link" href="#team">Team</a>
 					</li>
 				</ul>
 			</div>
@@ -37,52 +37,58 @@
 				</div>
 			</section>
 		</div><!-- .abovefold -->
-		<div id="about">
-			<h1>About</h1>
-			<div>
-				<h2>Description</h2>
-				<p>
-					Maestro is a web and mobile experience to help you learn how to read sheet music in just four lessons.
-					Our unified lessons gradually build on and reinforce each other so that you leave each session with a renewed sense of possibilities.
-					We’ll take you through staff, rhythm, meter, and intervals.
-					Meet your Maestro.
-				</p>
-			</div>
-			<div>
-				<h2>How</h2>
-				<p>
-					We use world class technologies to bring Meastro to you.
-				</p>
-				<span>
-					<ul class="inline">
-						<li>
-							<a href="https://www.docker.com"><img src="assets/img/docker_vertical_large.png" width="180"></a>
-						</li>
-						<li>
-							<a href="https://vuejs.org"><img src="assets/img/vue_logo.png" width="180"></a>
-						</li>
-						<li>
-							<a href="https://parseplatform.org"><img src="assets/img/parse_logo.png" width="180"></a>
-						</li>
-					</ul>
-				</span>
+		<div class="about" id="about">
+			<h1 class="about-title">About</h1>
+			<div class="about-content">
+				<div>
+					<h2>Description</h2>
+					<p>
+						Maestro is a web and mobile experience to help you learn how to read sheet music in just four lessons.
+						Our unified lessons gradually build on and reinforce each other so that you leave each session with a renewed sense of possibilities.
+						We’ll take you through staff, rhythm, meter, and intervals.
+						Meet your Maestro.
+					</p>
+				</div>
+				<div>
+					<h2>How</h2>
+					<p>
+						We use world class technologies to bring Maestro to you.
+					</p>
+					<span class="tech-buttons">
+						<ul class="inline">
+							<li>
+								<a href="https://www.docker.com"><img src="assets/img/docker_vertical_large.png" class="tech-button" width="180"></a>
+							</li>
+							<li>
+								<a href="https://vuejs.org"><img src="assets/img/vue_logo.png" class="tech-button" width="180"></a>
+							</li>
+							<li>
+								<a href="https://parseplatform.org"><img src="assets/img/parse_logo.png" class="tech-button" width="180"></a>
+							</li>
+						</ul>
+					</span>
+				</div>
 			</div>
 		</div> <!-- about -->
-		<div id="team">
-			<h1>Team</h1>
+		<div class="team" id="team">
+			<h1 class="team-title">Team</h1>
 			<div class="profiles">
-				<img class="profile" src="assets/img/profiles/andre-gras.jpg">
-				<img class="profile" src="assets/img/profiles/andrew-ksendzoff.jpg">
-				<img class="profile" src="assets/img/profiles/bob-brennan-pickens.jpg">
-				<img class="profile" src="assets/img/profiles/dan-mattka.jpg">
-				<img class="profile" src="assets/img/profiles/jacquie-elias.jpg">
-				<img class="profile" src="assets/img/profiles/jake-carlson.jpg">
-				<img class="profile" src="assets/img/profiles/jenn-le.jpg">
-				<img class="profile" src="assets/img/profiles/kena-du.jpg">
-				<img class="profile" src="assets/img/profiles/max-brito.jpg">
-				<img class="profile" src="assets/img/profiles/meg-lindsay.jpg">
-				<img class="profile" src="assets/img/profiles/paul-herz.jpg">
-				<img class="profile" src="assets/img/profiles/sean-burrows.jpg">
+				<div class="profile-row">
+					<img class="profile" src="assets/img/profiles/andre-gras.jpg">
+					<img class="profile" src="assets/img/profiles/andrew-ksendzoff.jpg">
+					<img class="profile" src="assets/img/profiles/bob-brennan-pickens.jpg">
+					<img class="profile" src="assets/img/profiles/dan-mattka.jpg">
+					<img class="profile" src="assets/img/profiles/jacquie-elias.jpg">
+					<img class="profile" src="assets/img/profiles/jake-carlson.jpg">
+				</div>
+				<div class="profile-row">
+					<img class="profile" src="assets/img/profiles/jenn-le.jpg">
+					<img class="profile" src="assets/img/profiles/kena-du.jpg">
+					<img class="profile" src="assets/img/profiles/max-brito.jpg">
+					<img class="profile" src="assets/img/profiles/meg-lindsay.jpg">
+					<img class="profile" src="assets/img/profiles/paul-herz.jpg">
+					<img class="profile" src="assets/img/profiles/sean-burrows.jpg">
+				</div>
 			</div><!-- .profiles -->
 		</div> <!-- team -->
 	</body>
