@@ -3,4 +3,4 @@ WORKDIR ../../src/backend
 COPY . .
 RUN npm install
 EXPOSE 3308
-CMD ["ash", "start.sh"]
+CMD ["node", "app.js"]

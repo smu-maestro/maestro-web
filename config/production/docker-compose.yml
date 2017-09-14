@@ -27,7 +27,7 @@ services:
         build:
             context: ../../src/backend
             dockerfile: backend
-        command: node /maestro/backend/server.js
+        command: node /maestro/backend/app.js
         restart: always
         ports:
             - 3308:3308
