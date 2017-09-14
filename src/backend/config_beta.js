@@ -1,9 +1,9 @@
 const Parse = require('parse/node');
 const requireDir = require('require-dir');
 
-Parse.initialize('maestroBackend');
-Parse.serverURL = 'http://localhost:1337/parse';
-Parse.masterKey = 'qwertyuiop';
+Parse.initialize('maestro');
+Parse.serverURL = 'http://localhost:3308/parse';
+Parse.masterKey = 'orange';
 
 var load = () => {
   const lessons = requireDir('./lessons/demo');
