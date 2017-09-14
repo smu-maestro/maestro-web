@@ -44,7 +44,7 @@ var loadData = () => {
   for(var i = 0; i < quiz.length; i++){
     quiz[i].lessonNumber = content.number;
     for(prop in quiz[i]){
-      newQuiz.add(prop, quiz[i].prop);
+      newQuiz.set(prop, quiz[i].prop);
     }
   }
 console.log(newQuiz);
@@ -52,7 +52,7 @@ console.log(newQuiz);
 
   var newLesson = new Lesson();
   for(prop in content){
-    newLesson.add(prop, content[prop]);
+    newLesson.set(prop, content[prop]);
   }
   newLesson.save();
   

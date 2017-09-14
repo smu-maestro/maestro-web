@@ -12,7 +12,7 @@ var load = () => {
     console.log(lesson);
     var newLesson = new parseLesson();
     for(prop in lesson){
-      newLesson.add(prop, lesson[prop]);
+      newLesson.set(prop, lesson[prop]);
     }
     newLesson.save();
   });
