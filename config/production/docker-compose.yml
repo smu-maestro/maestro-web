@@ -24,6 +24,9 @@ services:
 
     maestro-backend:
         image: node:alpine
+        build:
+            context: ../../src/backend
+            dockerfile: backend
         command: node /maestro/backend/server.js
         restart: always
         ports:

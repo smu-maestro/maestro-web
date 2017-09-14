@@ -6,9 +6,8 @@ gzip
 log /var/log/caddy/access.log
 errors /var/log/caddy/error.log
 
-rewrite /parse {
-	regexp .*
-	to localhost:3308/parse?{query}
+proxy /parse maestro-backend:3308 {
+	transparent
 }
 
 rewrite {
