@@ -8,7 +8,7 @@
           <h2 class="lesson-content-detail">Introduction · Lesson {{ lesson.number }}</h2>
           <h1 class="lesson-content-title">{{ lesson.title }}</h1>
           <div class="lesson-content-image">
-							<img v-if="lesson.content[card].img"  :src= "lesson.content[card].image" class="lesson-img">
+							<img v-if="lesson.content[card].image"  :src= "lesson.content[card].image" class="lesson-img">
 					</div>
           <div class="lesson-body">
             <p class="lesson-content-text"> {{ lesson.content[card].text }}</p>
@@ -30,21 +30,21 @@
 import ProgressBar from './ProgressBar.vue';
 
 var lesson = { 
-  title: 'Lesson 2',
-  number: '2',
+  title: 'Lesson 1',
+  number: '1',
   content: 
    [ { type: 'content',
-       text: 'Rhythm in music is defined by beat values. These symbols represent different proportions of duration. A whole note is divided into half notes, which are then divided into quarter notes, etc. Each level in the beat tree is exactly half the duration of the note it stems from.',
-       image: 'http://localhost:1337/static/lesson_2/card0.jpg' },
+       text: 'The staff is a tool to graphically represent music. It consists of 5 lines and 4 spaces on which to plot notes. Each line or space represents a letter in the musical alphabet',
+       image: 'assets/lesson1/staff.png' },
      { type: 'content',
-       text: 'A slight addition to the note tree is the concept of “dotting.” When you put a dot after a note, you add half its duration to the beat value. Therefore, dotting a quarter note adds an eighth note to it. A dotted whole note is a whole note plus a half note. You take the value of the next beat down on the beat tree and add it.',
-       image: 'http://localhost:1337/static/lesson_2/card1.png' },
+       text: 'There are 7 letters that make up the musical alphabet: A, B, C, D, E, F, G. Progressing through all 7 notes in order makes a scale. The letters restart after G, so the note after G is always A. The simplest scale is the C Major Scale: C, D, E, F, G, A, B, C',
+       image: 'assets/lesson1/scale.jpg' },
      { type: 'content',
        text: 'Just as there are beats to denote the sound of a note, there must be a symbol for the absence of music, or a “rest.” A rest means no notes are played, and it follows its own tree. A good way to remember a whole rest versus a half rest is “a whole (full) gentleman takes his hat off, whereas only half a gentleman keeps his hat on his head.” Or a hole goes in the ground (the whole rest block goes below the line).',
-       image: 'http://localhost:1337/static/lesson_2/card2.png' },
+       image: 'assets/lesson1/clefs.png' },
      { type: 'content',
        text: 'Another annotation to music that does not affect how it is read, but you will see in music is “barring.” With beat values of 8th and below, one can group the notes using a bar, as seen above. With barred 16th notes, there is merely another line in the bar. ',
-       image: 'http://localhost:1337/static/lesson_2/card3.jpg' },
+       image: 'assets/lesson1/ledger.jpg' },
      { type: 'quiz',
        question: 'What is this beat?',
        image: 'http://localhost:1337/static/lesson_2/quiz0.png',
@@ -91,6 +91,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+img {
+  display:block;
+  margin:auto;
+  width:400px;
+}
 .lesson {
 	flex: 1;
 	display: flex;

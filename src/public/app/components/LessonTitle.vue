@@ -20,8 +20,8 @@
 
 <script>
 var lesson = { 
-  title: 'Lesson 2',
-  number: '2',
+  title: 'Lesson 1',
+  number: '1',
   content: 
    [ { type: 'content',
        text: 'Rhythm in music is defined by beat values. These symbols represent different proportions of duration. A whole note is divided into half notes, which are then divided into quarter notes, etc. Each level in the beat tree is exactly half the duration of the note it stems from.',
@@ -38,7 +38,13 @@ var lesson = {
      { type: 'quiz',
        question: 'What is this beat?',
        image: 'http://localhost:1337/static/lesson_2/quiz0.png',
-       answers: [Array] },
+       answers: [  
+         { answer: 'Whole note', correct: false },
+         { answer: 'Half note', correct: false },
+         { answer: 'Quarter note', correct: true },
+         { answer: 'Eighth note', correct: false    } 
+        ],
+     },
      { type: 'quiz',
        question: 'What is this rest?',
        image: 'http://localhost:1337/static/lesson_2/quiz1.gif',
