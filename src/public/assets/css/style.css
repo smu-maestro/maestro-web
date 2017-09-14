@@ -1,0 +1,264 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 1rem 0;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+a.nav-link {
+  text-decoration: none;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+}
+
+a:link, a:active, a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #3f3f3f;
+}
+
+.invert a:link, .invert a:active, .invert a:visited {
+  color: #fff;
+}
+
+.inline li {
+  display: inline;
+}
+
+.invert {
+  background-color: #000;
+  color: #fff;
+}
+
+.abovefold {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  flex: 0 0 0;
+}
+
+.site-brand {
+  padding: 1rem;
+  display: block;
+}
+
+.homepage-hero {
+  margin: 0 1rem 1rem;
+  padding: 0 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../img/piano.jpg') no-repeat center right;
+  background-size: cover;
+}
+
+.homepage-hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.homepage-hero-bottom {
+  flex: 0;
+}
+
+.homepage-hero-text-primary, .homepage-hero-text-secondary {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+.homepage-hero-text-primary {
+  /*font-size: 1.5rem;*/
+  text-transform: uppercase;
+}
+
+.homepage-hero-text-secondary {
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.about {
+  margin: 0 1rem 1rem;
+  padding: 2rem 1rem 4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  border-color: #1a1a1a;
+}
+
+.about-title {
+  font-weight: 300;
+  align-self: center;
+  text-transform: uppercase;
+}
+
+.about-content {
+  width: 60%;
+  align-self: center;
+}
+
+.about-content>div {
+  align-items: center;
+}
+
+ul {
+  align-content: center;
+}
+
+img.tech-button {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.team {
+  margin: 4rem 1rem;
+  padding: 2rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+}
+
+.team-title {
+  color: #fff;
+  font-weight: 300;
+  align-self: center;
+  text-transform: uppercase;
+}
+
+.profiles {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  align-items: center;
+}
+
+.profile-row {
+  margin: 1rem auto;
+}
+
+.profile {
+  width: 128px;
+  height: 128px;
+  margin: 1rem;
+  border-radius: 50%;
+  filter: grayscale(100%) brightness(100%);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.profile:hover {
+  filter: grayscale(0%) brightness(100%);
+  transform: translateY(-7px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+/*.profile:active {
+	filter: grayscale(25%) brightness(80%);
+	transform: translateY(2px);
+	box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}*/
+
+.button {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.default-button, a.default-button {
+  text-transform: uppercase;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.invert .default-button, .invert a.default-button {
+  background: #fff;
+  color: #000;
+}
+
+.link-button {
+  display: inline;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.big-button {
+  font-size: 1.15rem;
+}
+
+.default-button.big-button {
+  padding: 1rem;
+}
+
+.block-button {
+  display: block;
+  margin: 1rem 0;
+}
+
+.button[disabled] {
+  cursor: default;
+}
+
+.lesson {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 1rem;
+}
+
+.lesson-title-card {
+  flex: 1;
+  padding: 3rem 1rem 0;
+  background-color: #F3F3F3;
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-title-card-content {
+  flex: 1;
+}
+
+.lesson-title-card-bar {
+  flex: 0;
+  padding: 0 0 1rem;
+  text-align: right;
+}
+
+.lesson-title-detail {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-title-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-top: 0;
+}
