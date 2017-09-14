@@ -5,7 +5,7 @@
 			</header>
       <section class="lesson">
         <div class="lesson-content-card">
-          <h2 class="lesson-content-detail">Introduction · Lesson {{ lesson.num }}</h2>
+          <h2 class="lesson-content-detail">Introduction · Lesson {{ lesson.number }}</h2>
           <h1 class="lesson-content-title">{{ lesson.title }}</h1>
           <div class="lesson-content-image">
 							<img v-if="lesson.content[card].img"  :src= "lesson.content[card].image" class="lesson-img">
