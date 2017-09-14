@@ -8,6 +8,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "express": "^4.15.4",
     "mongodb-runner": "^3.5.0",
+    "parse": "^1.10.0",
     "parse-server": "^2.5.3",
     "url-loader": "^0.5.9",
     "vue": "^2.4.2",
