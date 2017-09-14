@@ -11,7 +11,7 @@
 							<img src="../assets/quarter-note.png" width="128">
 					</div>
           <div class="lesson-title-card-bar">
-            <button class="button link-button big-button" @click="next">Next</button>
+            <button class="button link-button big-button" @click="next">Start</button>
           </div>
         </div>
     </section>

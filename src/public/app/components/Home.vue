@@ -16,14 +16,12 @@ export default {
   name: 'Home',
   data () {
     return {
-
     }
   },
   methods: {
     next() {
        this.$router.push({name: 'LessonTitle'});
     }
-
   }
 }
 </script>
@@ -42,7 +40,6 @@ export default {
 	flex-direction: column;
 	padding: 1rem 1rem 1rem 1rem;
 }
-
 .lesson-title-card {
 	flex: 1;
 	padding: 3rem 1rem 0;
