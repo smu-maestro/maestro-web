@@ -1,7 +1,7 @@
 34.208.222.61:80, maestro.gdn:80, www.maestro.gdn:80
 
 root /var/www/maestro/public
-tls off
+tls aksendzoff@smu.edu
 gzip
 log /var/log/caddy/access.log
 errors /var/log/caddy/error.log
