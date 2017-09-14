@@ -5,8 +5,21 @@
 </template>
 
 <script>
+const Parse = require('parse')
+Parse.initialize('maestroBackend');
+Parse.serverURL = 'http://maestro.dev:3308/parse';
+
+var query = new Parse.Query('lesson');
+query.find().then((results) => {
+	results.forEach((result)=> {
+		console.log(result.id);
+	});
+});
 export default {
-  name: 'app'
+	name: 'app',
+	data: {
+		message: 'Vue Works!'
+	},
 }
 </script>
 
