@@ -1,0 +1,30 @@
+{
+  "title": "",
+  "number": "4",
+  "content": [
+    {
+      "type": "content",
+      "text": "In music, there are various other markings that denote different accentuation or changes in volume, etc."
+    },
+    {
+      "type": "content",
+      "text": "When a composer wants to indicate a change in relative intensity and volume, he/she marks the music with dynamics, symbols from pp (pianissimo) which means very quiet to ff (fortissimo) which means very loud. These markings are usually done right underneath the note.",
+      "image": "http://maestro.gdn/static/lesson_4/card1.png"
+    },
+    {
+      "type": "content",
+      "text": "Crescendos and diminuendos are also markings for changing dynamics. They denote gradual changes in the relative volume of the piece over the length of the marking. If the crescendo spans one measure, the volume increases over the course of the measure. There are usually dynamics markings at the beginning and end of a crescendo and decrescendo, as shown above.",
+      "image": "http://maestro.gdn/static/lesson_4/card2.jpg"
+    },
+    {
+      "type": "content",
+      "text": "Articulations are different markings on specific notes that change how you play the note. A little dot above the note means you play it staccato, quickly and short. A small dash above the note means you play it tenuto, long and drawn out. You can think of a staccato and tenuto like a dot and dash in morse, respectively. Accents mean you play the note more intensely, giving emphasis to the beginning of the note. Just as how an accent in language places emphasis on a certain syllable, accents in music place emphasis on the beginning. Fermatas can technically be held forever if one likes. The notation just means to hold the note indefinitely until the conductor or you choose to stop.",
+      "image": "http://maestro.gdn/static/lesson_4/card3.png"
+    },
+    {
+      "type": "content",
+      "text": "In addition to the various note markings, sheet music also contains various symbols for mapping how to progress through the music. There are different mappings shown in our examples. First, you play until the D.C. then go back to the beginning and play until fine (the end). D.C. means “Da Capo,” which means “the head” in Italian. (You can remember this by thinking about having a cap on your head) So D.C. al fine means “Go to the beginning until the ‘fine’”. The second example shows a Dal Segno and a coda symbol. The D.S. symbol looks like a division sign mashed with an ‘S’. It means “from the sign.” Just like the D.C. al fine, if you see a D.S. al coda, it means to go back to the sign you see then play until a “to coda” marking or a  “coda” symbol, which looks like a crosshair. These symbols allow composers to map certain repetitions and progressions to their music and saves a good amount of writing",
+      "image": "http://maestro.gdn/static/lesson_4/card4.png"
+    }
+  ]
+}

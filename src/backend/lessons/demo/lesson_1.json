@@ -1,41 +1,41 @@
 {
-  "title": "Lesson 1",
+  "title": "Staff and Notes",
   "number": "1",
   "content": [
     {
       "type": "content",
-      "text": "The staff is a tool to graphically represent music\nIt consists of 5 lines and 4 spaces on which to plot notes\nEach line or space represents a letter in the musical alphabet",
-      "image": "http://localhost:3308/static/lesson_1/card0.png"
+      "text": "The staff is a tool to graphically represent music It consists of 5 lines and 4 spaces on which to plot notes Each line or space represents a letter in the musical alphabet",
+      "image": "http://maestro.gdn/static/lesson_1/card0.png"
     },
     {
       "type": "content",
-      "text": "There are 7 letters that make up the musical alphabet: A, B, C, D, E, F, G.\nProgressing through all 7 notes in order makes a scale.\nThe letters restart after G, so the note after G is always A.\nThe simplest scale is the C Major Scale: C, D, E, F, G, A, B, C",
-      "image": "http://localhost:3308/static/lesson_1/card1.jpg"
+      "text": "There are 7 letters that make up the musical alphabet: A, B, C, D, E, F, G. Progressing through all 7 notes in order makes a scale. The letters restart after G, so the note after G is always A. The simplest scale is the C Major Scale: C, D, E, F, G, A, B, C",
+      "image": "http://maestro.gdn/static/lesson_1/card1.jpg"
     },
     {
       "type": "content",
-      "text": "The clefs determine where the notes go on the staff\nThe treble clef (or “G” clef) looks like a cursive G, and denotes a G on the second line from the bottom: the “curl” of the G curls around the second line\nThe bass clef (or “F” clef) looks like a stylized F, with the two dots, or “lines”, of the F hugging the second line from the top of the staff",
-      "image": "http://localhost:3308/static/lesson_1/card2.png"
+      "text": "The clefs determine where the notes go on the staff The treble clef (or “G” clef) looks like a cursive G, and denotes a G on the second line from the bottom: the “curl” of the G curls around the second line The bass clef (or “F” clef) looks like a stylized F, with the two dots, or “lines”, of the F hugging the second line from the top of the staff",
+      "image": "http://maestro.gdn/static/lesson_1/card2.png"
     },
     {
       "type": "content",
       "text": "If you need more lines on the staff than the allotted 5 lines and 4 spaces, one creates ledger lines as seen below. These continue at the same steps as the notes on the staff, for readability.",
-      "image": "http://localhost:3308/static/lesson_1/card3.jpg"
+      "image": "http://maestro.gdn/static/lesson_1/card3.jpg"
     },
     {
       "type": "content",
       "text": "Sharps and flats are notations in music that modify the note’s pitch by a half-step. Sharp means a half-step higher and flat means a half-step lower. Accidentals are the small symbols that appear before note-heads in the piece. Sharps and flats also appear in the key signature at the beginning of a piece.",
-      "image": "http://localhost:3308/static/lesson_1/card4.jpg"
+      "image": "http://maestro.gdn/static/lesson_1/card4.jpg"
     },
     {
       "type": "content",
-      "text": "A key signature at the beginning of a piece or line of music tells you which notes are sharp and flat for consequent measures\nFor example, the key signature below (would be above) says that all G’s, C’s, and F’s are sharp.\nAccidentals are written before the note-head and change the pitch regardless of the key signature: e.g. a C sharp in the key signature denoted by an accidental as C flat is played as C flat",
-      "image": "http://localhost:3308/static/lesson_1/card4.png"
+      "text": "A key signature at the beginning of a piece or line of music tells you which notes are sharp and flat for consequent measures For example, the key signature below (would be above) says that all G’s, C’s, and F’s are sharp. Accidentals are written before the note-head and change the pitch regardless of the key signature: e.g. a C sharp in the key signature denoted by an accidental as C flat is played as C flat",
+      "image": "http://maestro.gdn/static/lesson_1/card4.png"
     },
     {
       "type": "multiNote",
       "question": "Identify the notes: ",
-      "image": "http://localhost:3308/static/lesson_1/quiz0.jpg",
+      "image": "http://maestro.gdn/static/lesson_1/quiz0.jpg",
       "answers": [
         {
           "answer": "F, C, A, G",
@@ -58,7 +58,7 @@
     {
       "type": "multiNote",
       "question": "Identify the notes: ",
-      "image": "http://localhost:3308/static/lesson_1/quiz1.jpg",
+      "image": "http://maestro.gdn/static/lesson_1/quiz1.jpg",
       "answers": [
         {
           "answer": "F, C, A, G",
