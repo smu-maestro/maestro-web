@@ -1,0 +1,21 @@
+{
+  "title": "Rhythm Pt.2: Meter",
+  "number": "3",
+  "content": [
+    {
+      "type": "content",
+      "text": "Now that you know how rhythm is denoted in music, you need to know how it is organized. To organize music’s rhythm by its beats, we place the beats in bins we call measures.",
+      "image": "http://maestro.gdn/static/lesson_3/card0.png"
+    },
+    {
+      "type": "content",
+      "text": "To know how many beats to place in each measure, we look at the time signature. The time signature is two numbers placed right after the clef notation that give you information on the rhythm organization. The top number is the number of beats per measure. The bottom number is the rhythm value that gets the beat. For the bottom numbers, 1 = whole note, 2 = half note, 4 = quarter note,  8 = 8th notes, 16 = 16th, etc. So, in the top line, there are 2 beats per measure and a quarter note gets the beat, meaning any of those measures above are valid breakdowns of the notes. In the second, there are 3 beats per measure and those 3 beats are 8th notes. ",
+      "image": "http://maestro.gdn/static/lesson_3/card1.png"
+    },
+    {
+      "type": "content",
+      "text": "The time signature itself does not tell you the speed the beats are played at however. Even if you see a time signature with a seemingly “short” beat value get the beat (say 32nd note), you can’t say that piece is “fast.” The speed the beats are played at is given by a TEMPO value. These tempo values are usually denoted by a beat value equaling a number at the top of the sheet music. Tempo values can also be denoted by a series of different Italian terms, as shown above. ",
+      "image": "http://maestro.gdn/static/lesson_3/card2.jpg"
+    }
+  ]
+}
