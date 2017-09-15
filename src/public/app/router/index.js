@@ -2,7 +2,8 @@ import Home from '../components/Home.vue';
 import Lesson from '../components/Lesson.vue';
 import LessonTitle from '../components/LessonTitle.vue';
 import LessonQuiz from '../components/LessonQuiz.vue';
-import LessonCompletion from '../components/Lesson-Completion.vue'
+import LessonCompletion from '../components/Lesson-Completion.vue';
+import LessonContent from '../components/LessonContent.vue';
 
 
 export default new VueRouter({

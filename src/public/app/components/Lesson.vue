@@ -1,20 +1,14 @@
 <template>
   <div class="above-fold">
     	<header class="site-header">
-				<progress-bar></progress-bar>
+				<progress-bar :num="cardNum" :total="lesson.content.length"></progress-bar>
 			</header>
       <section class="lesson">
         <div class="lesson-content-card">
-          <h2 class="lesson-content-detail">Introduction · Lesson {{ lesson.number }}</h2>
-          <h1 class="lesson-content-title">{{ lesson.title }}</h1>
-          <div class="lesson-content-image">
-							<img v-if="lesson.content[card].image"  :src= "lesson.content[card].image" class="lesson-img">
-					</div>
-          <div class="lesson-body">
-            <p class="lesson-content-text"> {{ lesson.content[card].text }}</p>
-            <audio class="lesson-content-audio" v-if="lesson.content[card].audio" id="player" controls>
-              <source :src="lesson.content[card].audio" type="audio.mp3">
-            </audio>
+          <lesson-content v-if="isContent()" :card="lesson.content[cardNum]"></lesson-content>
+          <lesson-quiz v-if="isQuiz()"  :card="lesson.content[cardNum]"></lesson-quiz>
+          <div class="lesson-content-card-bar">
+            <button class="button link-button big-button" @click="next">Back</button>
           </div>
           <div class="lesson-content-card-bar">
             <button class="button link-button big-button" @click="next">Next</button>
@@ -28,6 +22,8 @@
 
 <script>
 import ProgressBar from './ProgressBar.vue';
+import LessonContent from './LessonContent.vue';
+import LessonQuiz from './LessonQuiz.vue';
 
 var lesson = { 
   title: 'Lesson 1',
@@ -45,6 +41,12 @@ var lesson = {
      { type: 'content',
        text: 'Another annotation to music that does not affect how it is read, but you will see in music is “barring.” With beat values of 8th and below, one can group the notes using a bar, as seen above. With barred 16th notes, there is merely another line in the bar. ',
        image: 'assets/lesson1/ledger.jpg' },
+    { type: 'content',
+       text: 'Sharps and flats are notations in music that modify the note’s pitch by a half-step. Sharp means a half-step higher and flat means a half-step lower. Accidentals are the small symbols that appear before note-heads in the piece. Sharps and flats also appear in the key signature at the beginning of a piece. ',
+       image: 'assets/lesson1/accidentals.jpg' },
+    { type: 'content',
+       text: 'Sharps and flats are notations in music that modify the note’s pitch by a half-step. Sharp means a half-step higher and flat means a half-step lower. Accidentals are the small symbols that appear before note-heads in the piece. Sharps and flats also appear in the key signature at the beginning of a piece. ',
+       image: 'assets/lesson1/amajor.png' },
      { type: 'quiz',
        question: 'What is this beat?',
        image: 'http://localhost:1337/static/lesson_2/quiz0.png',
@@ -64,26 +66,42 @@ export default {
   data: function () {
     return {
       lesson:lesson,
-      card:0
+      cardNum:0,
+      progress:0
     }
   },
 
   methods:{
     next() {
       console.log(lesson.content.length);
-      console.log(lesson.content[(this.card+1)].type);
-      if( (this.card+1) < lesson.content.length && lesson.content[(this.card+1)].type=='content' ) {
+      if( (this.cardNum+1) < lesson.content.length && lesson.content[(this.cardNum+1)].type=='content' ) {
         console.log("in cardhi");
-        this.card = this.card+1; 
+        this.cardNum = this.cardNum+1; 
 
       } else {
         this.$router.push({name: 'Quiz'});
         console.log("ine lse");
       }
+    },
+    isContent() {
+      if( lesson.content[(this.cardNum)].type=='content' ) {
+        return true;
+      } else {
+        return false; 
+      }
+    },
+    isQuiz() {
+      if( lesson.content[(this.cardNum)].type=='quiz' ) {
+        return true;
+      } else {
+        return false; 
+      }
     }
   },
   components: {
-    'progress-bar': ProgressBar
+    'progress-bar': ProgressBar,
+    'lesson-content': LessonContent,
+    'lesson-quiz': LessonQuiz
   }
 
 }

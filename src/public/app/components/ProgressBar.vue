@@ -21,16 +21,38 @@ var lesson = {
 
 export default {
   name: 'ProgressBar',
+  props: ['num', 'total'],
   data () {
     return {
       lesson:lesson
     }
   },
+  watch: { 
+    num: function() {
+        console.log(this.num/this.total);
+        var progress = document.getElementById("bar");
+        //progress.style.width= ((this.num/this.total)*100) + "%"; 
+        var stop = this.num/this.total*100;
+        console.log("stuff" + progress.style.width);
+        var width = ((this.num/this.total)-(1/this.total)*100); 
+        var id = setInterval(frame,10);
+        function frame() {
+             console.log("width: " + width);
+             console.log("other: " + stop);
+           if (width >= stop) {
+               clearInterval(id);
+           } else {
+               width++;
+               progress.style.width = width + '%';
+           }
+       }
+  }},
   methods: {
     move() {
        var elem = document.getElementById("bar");
        var width = 1; 
        var id = setInterval(frame,10);
+                 
        function frame() {
            if (width >= 100) {
                clearInterval(id);

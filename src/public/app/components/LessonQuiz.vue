@@ -1,12 +1,7 @@
 <template>
-  <div class="above-fold">
-    	<header class="site-header">
-			<img class="site-brand" src="../assets/maestro-m-icon.svg" width="40px" aria-label="Maestro">
-		</header>
-    <section class="lesson">
-        <div class="lesson-content-card">
-            <h1 class="lesson-content-title">{{ quiz.title }}</h1>
-            <div v-for="(question, i) in quiz.questions">
+    <div class="lesson-content-card">
+        <h1 class="lesson-content-title">{{ quiz.title }}</h1>
+        <div v-for="(question, i) in quiz.questions">
                 <div class="lesson-body">
                     <div class="lesson-content-image">
 						<img v-if="question.image"  :src= "question.image" class="lesson-img">
@@ -39,8 +34,6 @@
                 <button class="button link-button big-button" @click="finish">Finish</button>
             </div>
         </div>
-    </section>
-  </div>
 </template>
 
 <script>
@@ -92,6 +85,7 @@ export default {
         userAnswers: Array(quiz.questions.length).fill(false)
     }
   },
+  props: ['card'],
   methods: {
     next: function() {
             this.questionIndex++;
