@@ -11,6 +11,3 @@ scripts:
 
 after_script:
     - npm run docker:destroy
-
-after_success:
-    - ./bin/push-latest.sh

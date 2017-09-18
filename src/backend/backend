@@ -1,0 +1,6 @@
+FROM mhart/alpine-node:8
+WORKDIR ../../src/backend
+COPY . .
+RUN npm install
+EXPOSE 3308
+CMD ["node", "app.js"]
