@@ -5,13 +5,17 @@
 			</header>
       <section class="lesson">
         <div class="lesson-content-card">
-          <lesson-content v-if="isContent()" :card="lesson.content[cardNum]"></lesson-content>
-          <lesson-quiz v-if="isQuiz()"  :card="lesson.content[cardNum]"></lesson-quiz>
-          <div class="lesson-content-card-bar">
-            <button class="button link-button big-button" @click="next">Back</button>
+          <lesson-content v-show="isContent()" :card="lesson.content[cardNum]"></lesson-content>
+          <lesson-quiz v-show="isQuiz()"  :card="lesson.content[cardNum]"></lesson-quiz>
+          <div v-show="cardNum >  0" class="lesson-content-card-bar">
+            <button class="button link-button big-button" @click="prev">Back</button>
           </div>
-          <div class="lesson-content-card-bar">
+          <div v-show="cardNum <  lesson.content.length" class="lesson-content-card-bar">
             <button class="button link-button big-button" @click="next">Next</button>
+          </div>
+          <div v-show="cardNum ===  lesson.content.length">
+                <h2> You finished the lesson </h2>
+                <button class="button link-button big-button" @click="finish">Finish</button>
           </div>
         </div>
     </section>
@@ -49,16 +53,34 @@ var lesson = {
        image: 'assets/lesson1/amajor.png' },
      { type: 'quiz',
        question: 'What is this beat?',
-       image: 'http://localhost:1337/static/lesson_2/quiz0.png',
-       answers: [Array] },
+       image: 'assets/lesson1/b4_sharp.png',
+       answers: [
+                {text: 'B4 Sharp', correct: true},
+                {text: 'A3 Flat', correct: false},
+                {text: 'B4 Flat', correct: false},
+                {text: 'None of the above', correct: false},
+
+            ] },
      { type: 'quiz',
        question: 'What is this rest?',
-       image: 'http://localhost:1337/static/lesson_2/quiz1.gif',
-       answers: [Array] },
+       image: 'assets/lesson1/b4_sharp.png',
+       answers: [
+                {text: 'B4 Sharp', correct: true},
+                {text: 'A3 Flat', correct: false},
+                {text: 'B4 Flat', correct: false},
+                {text: 'None of the above', correct: false},
+
+            ] },
      { type: 'quiz',
        question: 'How many eighth notes are in this beat?',
-       image: 'http://localhost:1337/static/lesson_2/quiz2.gif',
-       answers: [Array] } ],
+       image: 'assets/lesson1/b4_sharp.png',
+       answers: [
+                {text: 'B4 Sharp', correct: true},
+                {text: 'A3 Flat', correct: false},
+                {text: 'B4 Flat', correct: false},
+                {text: 'None of the above', correct: false},
+
+            ] } ],
 };
 
 export default {
@@ -74,14 +96,20 @@ export default {
   methods:{
     next() {
       console.log(lesson.content.length);
-      if( (this.cardNum+1) < lesson.content.length && lesson.content[(this.cardNum+1)].type=='content' ) {
+      if( (this.cardNum+1) < lesson.content.length ) {
         console.log("in cardhi");
         this.cardNum = this.cardNum+1; 
 
       } else {
-        this.$router.push({name: 'Quiz'});
-        console.log("ine lse");
+        //this.$router.push({name: 'Quiz'});
+        console.log("Done with lesson");
       }
+    },
+    prev() {
+      this.cardNum = this.cardNum-1;
+    },
+    finish() {
+
     },
     isContent() {
       if( lesson.content[(this.cardNum)].type=='content' ) {

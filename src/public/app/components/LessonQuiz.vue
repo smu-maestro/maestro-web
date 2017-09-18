@@ -1,38 +1,25 @@
 <template>
     <div class="lesson-content-card">
         <h1 class="lesson-content-title">{{ quiz.title }}</h1>
-        <div v-for="(question, i) in quiz.questions">
-                <div class="lesson-body">
-                    <div class="lesson-content-image">
-						<img v-if="question.image"  :src= "question.image" class="lesson-img">
-					</div>
-                    <audio class="lesson-content-audio" v-if="question.audio" id="player" controls>
-                        <source :src="question.audio" type="audio.mp3">
-                     </audio>
+            <div class="lesson-body">
+                <div class="lesson-content-image">
+					<img v-if="card.image"  :src= "card.image" class="lesson-img">
+				</div>
+                <audio class="lesson-content-audio" v-if="card.audio" id="player" controls>
+                        <source :src="card.audio" type="audio.mp3">
+                </audio>
                 </div>
-                <div v-show="i === questionIndex">
-                    <h2 class="lesson-content-text">{{ question.text }}</h2>
+                <h2 class="lesson-content-text">{{ card.question }}</h2>
                     <ol>
-                        <li v-for="answer in question.answers">
+                        <li v-for="answer in card.answers">
                             <label>
                                 <input type="radio" 
                                         v-bind:value="answer.correct" 
-                                        v-bind:name="i" 
-                                        v-model="userAnswers[i]" > {{answer.text}}
+                                        v-bind:name="card.question" 
+                                        v-model="userAnswers[i]" > {{answer.text}} 
                             </label>
                         </li>
                     </ol>
-                     <div class="lesson-title-card-bar">
-                        <button class="button link-button big-button" v-if="questionIndex > 0" v-on:click="prev"> prev </button>
-                        <button class="button link-button big-button" v-on:click="next"> next </button>
-                    </div>
-                </div>
-            </div>
-            <div v-show="questionIndex ===  quiz.questions.length">
-                <h2> You finished the quiz </h2>
-                <p> Your score is {{ score() }}/{{quiz.questions.length}} </p>
-                <button class="button link-button big-button" @click="finish">Finish</button>
-            </div>
         </div>
 </template>
 

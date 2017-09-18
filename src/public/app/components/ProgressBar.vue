@@ -29,16 +29,14 @@ export default {
   },
   watch: { 
     num: function() {
-        console.log(this.num/this.total);
+        //console.log(this.num/this.total);
         var progress = document.getElementById("bar");
         //progress.style.width= ((this.num/this.total)*100) + "%"; 
         var stop = this.num/this.total*100;
-        console.log("stuff" + progress.style.width);
+        //console.log("stuff" + progress.style.width);
         var width = ((this.num/this.total)-(1/this.total)*100); 
         var id = setInterval(frame,10);
         function frame() {
-             console.log("width: " + width);
-             console.log("other: " + stop);
            if (width >= stop) {
                clearInterval(id);
            } else {
