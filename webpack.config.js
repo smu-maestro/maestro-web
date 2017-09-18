@@ -3,7 +3,7 @@ var path = require('path');
 
 
 // Naming and path settings
-var appName = 'app';
+var appName = 'main';
 var entryPoint = './src/public/app/app.js';
 var exportPath = path.resolve(__dirname, './src/public/app/dist/');
 

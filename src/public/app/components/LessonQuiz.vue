@@ -1,33 +1,37 @@
 <template>
   <div class="quiz">
     <h1>{{ quiz.title }}</h1>
+        <div v-show="counter === 0">
         <div v-for="(question, i) in quiz.questions">
-            <div v-show="i === questionIndex">
-                <h2>{{ question.text }}</h2>
-                <ol>
-                    <li v-for="answer in question.answers">
-                        <label>
-                            <input type="radio" 
-                                    v-bind:value="answer.correct" 
-                                    v-bind:name="i" 
-                                    v-model="userAnswers[i]" > {{answer.text}}
-                        </label>
-                    </li>
-                </ol>
-                <button v-if="questionIndex > 0" v-on:click="prev"> prev </button>
-                <button v-on:click="next"> next </button>
+            <h2>{{ question.text }}</h2>
+            <ol>
+                <li v-for="answer in question.answers">
+                        <input name="lessquiz" id="i" type="radio" 
+                                v-bind:value="answer.correct" 
+                                v-model="userAnswer" >
+                        <label> {{ answer.text }} </label> 
+                            
+                </li>
+            </ol>
+            <button v-on:click="counter += 1">Submit</button>
+        </div>
+        </div>
+        <div v-show="counter === 1">
+            <h2> You finished the quiz </h2>
+            <div v-show="userAnswer == true">
+                <h3> Correct! </h3>
+                <button @click="finish">Finish</button>
+            </div>
+            <div v-show="userAnswer == false">
+                <h3> Try Again! </h3>
+                <button v-on:click="counter -= 1">Go Back</button>
             </div>
         </div>
-        <div v-show="questionIndex ===  quiz.questions.length">
-            <h2> You finished the quiz </h2>
-            <p> Your score is {{ score() }}/{{quiz.questions.length}} </p>
-            <button @click="finish">Finish</button>
-        </div>
+        
   </div>
 </template>
 
 <script>
-
 var quiz = {
     title: 'Lesson 1',
     questions: [
@@ -37,27 +41,7 @@ var quiz = {
                 {text: 'correct choice answer 1', correct: true},
                 {text: 'multiple choice answer 2', correct: false},
                 {text: 'multiple choice answer 3', correct: false},
-                {text: 'multiple choice answer 4', correct: false},
-
-            ]
-        },
-        {
-            text: "Multiple choice question 2",
-            answers: [
-                {text: 'multiple choice answer 1', correct: false},
-                {text: 'correct choice answer 2', correct: true},
-                {text: 'multiple choice answer 3', correct: false},
-                {text: 'multiple choice answer 4', correct: false},
-
-            ]
-        },
-        {
-            text: "Multiple choice question 3",
-            answers: [
-                {text: 'multiple choice answer 1', correct: false},
-                {text: 'multiple choice answer 2', correct: false},
-                {text: 'correct choice answer 3', correct: true},
-                {text: 'multiple choice answer 4', correct: false},
+                {text: 'multiple choice answer 4', correct: false}
 
             ]
         }
@@ -68,20 +52,15 @@ export default {
   name: 'LessonQuiz',
   data () {
     return {
+        counter: 0,
         quiz: quiz,
         questionIndex: 0,
-        userAnswers: Array(quiz.questions.length).fill(false)
+        userAnswer: false
     }
   },
   methods: {
-    next: function() {
-            this.questionIndex++;
-    },
-    prev: function() {
-            this.questionIndex--;
-    },
     score: function() {
-            return this.userAnswers.filter(function(v) { return v }).length;
+            return this.userAnswer;
     },
     finish() {
        this.$router.push({name: 'Home'});

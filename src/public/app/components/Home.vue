@@ -1,10 +1,13 @@
 <template>
   <div class="home">
-    <h1>Maestro</h1>
-    <div>
-      <img src="../assets/image.png">
+    <div class="lesson-title-card">
+      <h1 class="title">Maestro</h1>
+      <h3>Music. Simplified.</h3>
+      <div>
+        <img width="200" src="../assets/piano.jpg">
+      </div>
+      <button class="invert default-button" @click="next"><h1>Begin</h1></button>
     </div>
-    <button @click="next"><h1 id="titlerino">GET STARTED!</h1></button>
   </div>
 </template>
 
@@ -13,80 +16,35 @@ export default {
   name: 'Home',
   data () {
     return {
-
     }
   },
   methods: {
     next() {
        this.$router.push({name: 'LessonTitle'});
     }
-
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#foot{
-	position: fixed;
-	bottom: 2%;
-	width: 100%;
-}
-
-#cent{
-	width: 50%;
-	margin: 0 auto;
-}
-
-#titlerino{
+.title {
 	font-family: 'Montserrat', sans-serif;
+	font-size: 2.5rem;
+	font-weight: 400;
+	margin-top: 0;
 }
-
-.home{
-	background-size: 100%;
+.home {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem 1rem 1rem 1rem;
 }
-
-
-
-
-.btn-outline{
-	background-color: white;
-	transition: .5s;
-}
-
-.btn-primary.btn-outline {
-	color: #000000;
-}
-
-.btn.btn-primary.btn-outline:hover{
-	background-color: black;
-	color: #ffffff;
-}
-/*
-#myDIV {
-    margin: auto;
-    -webkit-animation: mymove 5s infinite;
-    animation: mymove 6s infinite;
-}
-*/
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes mymove {
-    50% {-webkit-transform: scale(1.2,1.2);}
-}
-
-
-@keyframes mymove {
-    50% {transform: scale(1.2,1.2);}
-}
-
-#title1{
-	padding-top: 0.1em;
-}
-
-#intro{
-	margin:auto;
-	padding-top: 15%;
-	text-align: center;
+.lesson-title-card {
+	flex: 1;
+	padding: 3rem 1rem 0;
+	background-color: #F3F3F3;
+	display: flex;
+	flex-direction: column;
 }
 </style>

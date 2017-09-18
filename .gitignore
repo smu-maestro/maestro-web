@@ -3,3 +3,7 @@ node_modules/
 
 # logs
 logs/
+
+src/.DS_Store
+src/public/.DS_Store
+src/public/app/.DS_Store
