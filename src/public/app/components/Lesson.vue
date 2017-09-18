@@ -1,0 +1,189 @@
+<template>
+  <div class="above-fold">
+    	<header class="site-header">
+				<progress-bar :num="cardNum" :total="lesson.content.length"></progress-bar>
+			</header>
+      <section class="lesson">
+        <div class="lesson-content-card">
+          <lesson-content v-show="isContent()" :card="lesson.content[cardNum]"></lesson-content>
+          <lesson-quiz v-show="isQuiz()"  :card="lesson.content[cardNum]"></lesson-quiz>
+          <div v-show="cardNum >  0" class="lesson-content-card-bar">
+            <button class="button link-button big-button" @click="prev">Back</button>
+          </div>
+          <div v-show="cardNum <  lesson.content.length" class="lesson-content-card-bar">
+            <button class="button link-button big-button" @click="next">Next</button>
+          </div>
+          <div v-show="cardNum ===  lesson.content.length">
+                <h2> You finished the lesson </h2>
+                <button class="button link-button big-button" @click="finish">Finish</button>
+          </div>
+        </div>
+    </section>
+  </div>
+</template>
+
+
+
+<script>
+import ProgressBar from './ProgressBar.vue';
+import LessonContent from './LessonContent.vue';
+import LessonQuiz from './LessonQuiz.vue';
+
+var lesson = { 
+  title: 'Lesson 1',
+  number: '1',
+  content: 
+   [ { type: 'content',
+       text: 'The staff is a tool to graphically represent music. It consists of 5 lines and 4 spaces on which to plot notes. Each line or space represents a letter in the musical alphabet',
+       image: 'assets/lesson1/staff.png' },
+     { type: 'content',
+       text: 'There are 7 letters that make up the musical alphabet: A, B, C, D, E, F, G. Progressing through all 7 notes in order makes a scale. The letters restart after G, so the note after G is always A. The simplest scale is the C Major Scale: C, D, E, F, G, A, B, C',
+       image: 'assets/lesson1/scale.jpg' },
+     { type: 'content',
+       text: 'Just as there are beats to denote the sound of a note, there must be a symbol for the absence of music, or a “rest.” A rest means no notes are played, and it follows its own tree. A good way to remember a whole rest versus a half rest is “a whole (full) gentleman takes his hat off, whereas only half a gentleman keeps his hat on his head.” Or a hole goes in the ground (the whole rest block goes below the line).',
+       image: 'assets/lesson1/clefs.png' },
+     { type: 'content',
+       text: 'Another annotation to music that does not affect how it is read, but you will see in music is “barring.” With beat values of 8th and below, one can group the notes using a bar, as seen above. With barred 16th notes, there is merely another line in the bar. ',
+       image: 'assets/lesson1/ledger.jpg' },
+    { type: 'content',
+       text: 'Sharps and flats are notations in music that modify the note’s pitch by a half-step. Sharp means a half-step higher and flat means a half-step lower. Accidentals are the small symbols that appear before note-heads in the piece. Sharps and flats also appear in the key signature at the beginning of a piece. ',
+       image: 'assets/lesson1/accidentals.jpg' },
+    { type: 'content',
+       text: 'Sharps and flats are notations in music that modify the note’s pitch by a half-step. Sharp means a half-step higher and flat means a half-step lower. Accidentals are the small symbols that appear before note-heads in the piece. Sharps and flats also appear in the key signature at the beginning of a piece. ',
+       image: 'assets/lesson1/amajor.png' },
+     { type: 'quiz',
+       question: 'What is this beat?',
+       image: 'assets/lesson1/b4_sharp.png',
+       answers: [
+                {text: 'B4 Sharp', correct: true},
+                {text: 'A3 Flat', correct: false},
+                {text: 'B4 Flat', correct: false},
+                {text: 'None of the above', correct: false},
+
+            ] },
+     { type: 'quiz',
+       question: 'What is this rest?',
+       image: 'assets/lesson1/b4_sharp.png',
+       answers: [
+                {text: 'B4 Sharp', correct: true},
+                {text: 'A3 Flat', correct: false},
+                {text: 'B4 Flat', correct: false},
+                {text: 'None of the above', correct: false},
+
+            ] },
+     { type: 'quiz',
+       question: 'How many eighth notes are in this beat?',
+       image: 'assets/lesson1/b4_sharp.png',
+       answers: [
+                {text: 'B4 Sharp', correct: true},
+                {text: 'A3 Flat', correct: false},
+                {text: 'B4 Flat', correct: false},
+                {text: 'None of the above', correct: false},
+
+            ] } ],
+};
+
+export default {
+  name: 'lesson',
+  data: function () {
+    return {
+      lesson:lesson,
+      cardNum:0,
+      progress:0
+    }
+  },
+
+  methods:{
+    next() {
+      console.log(lesson.content.length);
+      if( (this.cardNum+1) < lesson.content.length ) {
+        console.log("in cardhi");
+        this.cardNum = this.cardNum+1; 
+
+      } else {
+        //this.$router.push({name: 'Quiz'});
+        console.log("Done with lesson");
+      }
+    },
+    prev() {
+      this.cardNum = this.cardNum-1;
+    },
+    finish() {
+
+    },
+    isContent() {
+      if( lesson.content[(this.cardNum)].type=='content' ) {
+        return true;
+      } else {
+        return false; 
+      }
+    },
+    isQuiz() {
+      if( lesson.content[(this.cardNum)].type=='quiz' ) {
+        return true;
+      } else {
+        return false; 
+      }
+    }
+  },
+  components: {
+    'progress-bar': ProgressBar,
+    'lesson-content': LessonContent,
+    'lesson-quiz': LessonQuiz
+  }
+
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+img {
+  display:block;
+  margin:auto;
+  width:400px;
+}
+.lesson {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 0 1rem 1rem;
+}
+
+.lesson-content-card {
+	flex: 1;
+	padding: 3rem 1rem 0;
+	background-color: #F3F3F3;
+	display: flex;
+	flex-direction: column;
+}
+
+.lesson-content-card-content {
+	flex: 1;
+}
+
+.lesson-content-card-bar {
+	flex: 0;
+	padding: 0 0 1rem;
+	text-align: right;
+}
+
+.lesson-content-detail {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 400;
+	opacity: 0.6;
+	margin-bottom: 0.5rem;
+}
+
+.lesson-content-title {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.5rem;
+	font-weight: 400;
+	margin-top: 0;
+}
+
+.button {
+  background-color:transparent;
+}
+</style>
