@@ -1,6 +1,7 @@
 <template>
   <div class="registration-form">
-	  <form name="registration-form" action="">
+	  nice
+	  <!-- <form name="registration-form" action="">
 		  <div>
 			  <label for="user_email">
 				  Email
@@ -16,21 +17,16 @@
 		  <button type="submit">
 			  Create Account
 		  </button>
-	  </form>
+	  </form> -->
   </div>
 </template>
 
 <script>
 console.log('in reg');
 export default {
-  name: 'registration',
-  data: {
-  },
-
-  methods:{
-    
-  },
-  components: {
+  name: 'Registration',
+  data () {
+	  return {}
   }
 }
 </script>
