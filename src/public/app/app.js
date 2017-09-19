@@ -1,3 +1,6 @@
+import App from './App.vue';
+import router from './router/index.js';
+
 /* Example code only! */
 Parse.initialize("maestro", "orange");
 Parse.serverURL = 'http://maestro.dev:3308/parse';
@@ -7,9 +10,9 @@ var obj = new TestObject();
 
 var app = new Vue({
     el: '#app',
-    data: {
-        message: 'Vue Works!'
-    },
+    router,
+    template: '<App/>',
+    components: { App },
     mounted: function () {
         obj.save({
             name: 'It works!'
