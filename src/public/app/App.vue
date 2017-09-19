@@ -6,7 +6,7 @@
 
 <script>
 const Parse = require('parse')
-Parse.initialize('maestroBackend');
+Parse.initialize('maestro', 'orange');
 Parse.serverURL = 'http://maestro.dev:3308/parse';
 
 var query = new Parse.Query('lesson');
