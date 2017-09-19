@@ -1,9 +1,10 @@
-const Parse = require('parse/node');
+var Parse = require('parse/node');
 const requireDir = require('require-dir');
+const request = require('superagent');
 
-Parse.initialize('maestroBackend');
-Parse.masterKey = 'qwertyuiop';
-Parse.serverURL = 'http://localhost:1337/parse';
+Parse.initialize('maestro', 'orange');
+// Parse.masterKey = 'orange';
+Parse.serverURL = 'http://ec2-35-167-92-83.us-west-2.compute.amazonaws.com:3308/parse';
 
 var fuck = () => {
   var query1 = new Parse.Query('lesson');
@@ -60,4 +61,36 @@ var ass = () => {
   }
 }
 
-ass();
+// ass();
+
+var twat = () => {
+  var user = new Parse.User();
+  user.set("username", "boris@boris.com");
+  user.set("password", "fuckfuck");
+  user.signUp()
+  .then((user) => {
+    console.log('im in your area');
+    console.log(user);
+  })
+  .catch((err) => {
+    console.error('have a sad cum bb');
+    console.error(err);
+  });
+}
+
+twat();
+
+var piss = () => {
+  request
+    .post('http://maestro.gdn/parse/users')
+    .set('X-Parse-Application-Id', 'maestro')
+    .set('X-Parse-Master-Key', 'orange')
+    .set('Content-Type', 'application/json')
+    .send({"username": "boris@boris.com", "password": "fuckfuck"})
+    .end((err, res) => {
+      if(err) console.error('shits broke', err);
+      console.log(res.body);
+    });
+}
+
+// piss();
