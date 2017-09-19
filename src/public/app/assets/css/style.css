@@ -1,0 +1,408 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 1rem 0;
+}
+
+.homepage-heading {
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+a.nav-link {
+    text-decoration: none;
+    padding-bottom: .5rem;
+    padding-left: 1rem;
+}
+
+a:link, a:active, a:visited {
+    color: #000;
+}
+
+a:hover {
+    color: #3f3f3f;
+}
+
+.invert a:link, .invert a:active, .invert a:visited {
+    color: #fff;
+}
+
+.inline li {
+    display: inline;
+}
+
+.invert {
+    background-color: #000;
+    color: #fff;
+}
+
+.abovefold {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-header {
+    flex: 0 0 0;
+    /* padding: 1rem 1rem 1rem;
+	background-color:#FFF; */
+}
+
+.site-brand {
+    width: 40px;
+    margin: 1rem;
+    display: block;
+}
+
+.homepage-hero {
+    margin: 0 1rem 1rem;
+    padding: 0 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../piano.jpg') no-repeat center right;
+    background-size: cover;
+}
+
+.homepage-hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.homepage-hero-bottom {
+    flex: 0;
+}
+
+.homepage-hero-text-primary, .homepage-hero-text-secondary {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+
+.homepage-hero-text-primary {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.homepage-hero-text-secondary {
+    font-size: 1rem;
+    opacity: 0.6;
+}
+
+.about {
+    padding: 0 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    border-color: #1a1a1a;
+}
+
+.about-title {
+    font-weight: 300;
+    align-self: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.about p {
+    width: 40em;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.tech-button {
+    max-width: 50%;
+    filter: grayscale(100%);
+    opacity: 0.9;
+    display: block;
+    margin: 2rem auto;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.tech-button:hover {
+    filter: grayscale(0%);
+}
+
+.tech-buttons {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.team {
+    margin: 0;
+    padding: 2rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+}
+
+.team-title {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    align-self: center;
+    text-transform: uppercase;
+}
+
+.profiles {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+}
+
+.profile {
+    margin: 1rem;
+    width: 128px;
+}
+
+.profile-image {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    filter: grayscale(100%) brightness(100%);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.profile-text {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+}
+
+.profile-image:hover {
+    filter: grayscale(0%) brightness(100%);
+    transform: translateY(-7px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+/*.profile:active {
+    filter: grayscale(25%) brightness(80%);
+    transform: translateY(2px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}*/
+
+.button {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    background: none;
+}
+
+.default-button, a.default-button {
+    text-transform: uppercase;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+.invert .default-button, .invert a.default-button {
+    background: #fff;
+    color: #000;
+}
+
+.link-button {
+    display: inline;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.link-button:focus {
+    outline: none !important;
+}
+
+.big-button {
+    font-size: 1.15rem;
+}
+
+.default-button.big-button {
+    padding: 1rem;
+}
+
+.block-button {
+    display: block;
+    margin: 1rem 0;
+}
+
+.button[disabled] {
+    cursor: default;
+}
+
+.lesson {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 1rem;
+    min-height: 30rem;
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+.lesson-title-card, .lesson-content-card {
+    padding: 3rem 1rem 0;
+    background-color: #F3F3F3;
+    flex: 1;
+	display: flex;
+    flex-direction: column;
+}
+
+.lesson-content {
+    flex: 1;
+}
+
+.lesson-title-card-content {
+    flex: 1;
+}
+
+.lesson-title-card-bar, .lesson-content-card-bar {
+    flex: 0;
+    padding: 0 0 1rem;
+    text-align: right;
+}
+
+.lesson-content-card-bar .button {
+    margin-left: 1rem;
+}
+
+.lesson-title-detail, .lesson-content-detail {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.6;
+    margin-bottom: 0.5rem;
+}
+
+.lesson-title-text, .lesson-content-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.lesson-content-text {
+    line-height: 1.5;
+}
+
+.lesson-quiz-question {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.lesson-quiz-answer {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.lesson-quiz-answer input[type="radio"] {
+    vertical-align: middle;
+}
+
+.lesson ol {
+    list-style-type:none;
+}
+
+.lesson-img {
+    display:block;
+    width: auto;
+    max-width: 100%;
+    max-height: 200px;
+    margin: 0 auto;
+}
+
+footer {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #fff;
+    opacity: 0.6;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 2rem 0 0;
+}
+
+.table-of-contents .card {
+    background-color:#F3F3F3;
+    padding: 1rem 1rem 1px;
+    margin: 1rem auto;
+    max-width: 50rem;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+}
+.table-of-contents {
+    background-color:grey;
+    width:100%;
+    padding: 1px 0;
+}
+.table-of-contents .lesson-num {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+	font-weight: 300;
+	margin-top: 0;
+    margin-bottom:5px;
+    color: rgba(0,0,0,0.6);
+}
+
+.table-of-contents .lesson-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 0.3rem;
+}
+
+
+@media screen and (min-width: 576px) {
+    html {
+        font-size: 1.3rem;
+    }
+    .profiles {
+        max-width: 50rem;
+        margin: 0 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .site-brand {
+        width: 50px;
+        margin: 1.2rem;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .tech-button {
+        display: inline-block;
+        margin: 2rem 2rem;
+    }
+}

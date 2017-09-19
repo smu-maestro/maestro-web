@@ -1,5 +1,5 @@
 <template>
-        <div class="lesson-content-card">
+        <div class="lesson-content">
           <div class="lesson-content-image">
 							<img v-if="card.image"  :src= "card.image" class="lesson-img">
 					</div>
@@ -75,7 +75,7 @@ export default {
 
       } else {
         this.$router.push({name: 'Quiz'});
-        console.log("ine lse");
+        console.log("in e lse");
       }
     }
   },
@@ -85,56 +85,3 @@ export default {
 
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-img {
-  display:block;
-  margin:auto;
-  width:400px;
-}
-.lesson {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	padding: 0 1rem 1rem;
-}
-
-.lesson-content-card {
-	flex: 1;
-	padding: 3rem 1rem 0;
-	background-color: #F3F3F3;
-	display: flex;
-	flex-direction: column;
-}
-
-.lesson-content-card-content {
-	flex: 1;
-}
-
-.lesson-content-card-bar {
-	flex: 0;
-	padding: 0 0 1rem;
-	text-align: right;
-}
-
-.lesson-content-detail {
-	font-family: 'Montserrat', sans-serif;
-	text-transform: uppercase;
-	font-size: 1rem;
-	font-weight: 400;
-	opacity: 0.6;
-	margin-bottom: 0.5rem;
-}
-
-.lesson-content-title {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 2.5rem;
-	font-weight: 400;
-	margin-top: 0;
-}
-
-.button {
-  background-color:transparent;
-}
-</style>

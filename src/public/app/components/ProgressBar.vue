@@ -1,12 +1,5 @@
 <template>
-  <div class="site-header">
-    <div id="progressBar">
-        <circle></circle>
-        <div id="bar" @click="move">
-            <img class="site-brand" src="../assets/maestro-m-icon.svg" width="40" aria-label="Maestro">
-        </div>
-    </div>
-</div>
+    <div class="progress-bar" v-bind:style="{ width: width+'%' }"></div>
 </template>
 
 <script>
@@ -24,68 +17,27 @@ export default {
   props: ['num', 'total'],
   data () {
     return {
-      lesson:lesson
+      lesson: lesson,
+      width: 0
     }
   },
-  watch: { 
-    num: function() {
-        //console.log(this.num/this.total);
-        var progress = document.getElementById("bar");
-        //progress.style.width= ((this.num/this.total)*100) + "%"; 
-        var stop = this.num/this.total*100;
-        //console.log("stuff" + progress.style.width);
-        var width = ((this.num/this.total)-(1/this.total)*100); 
-        var id = setInterval(frame,10);
-        function frame() {
-           if (width >= stop) {
-               clearInterval(id);
-           } else {
-               width++;
-               progress.style.width = width + '%';
-           }
-       }
-  }},
-  methods: {
-    move() {
-       var elem = document.getElementById("bar");
-       var width = 1; 
-       var id = setInterval(frame,10);
-                 
-       function frame() {
-           if (width >= 100) {
-               clearInterval(id);
-           } else {
-               width++;
-               elem.style.width = width + '%';
-           }
-       }
-    }
+watch: { 
+  num: function() {
+    this.width = (this.num/this.total*100);
   }
-
+},
+methods: {}
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#progressBar {
-    width:100%;
-    background-color:grey;
-
+.progress-bar {
+    background-color:black;
+    height:3px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    transition: 0.3s ease-in-out width;
 }
-
-#bar {
-    width:1%;
-    height: 40px;
-    background-color:green;
-}
-
-.site-header {
-    padding: 1rem 1rem 0 1rem;
-}
-
-.site-brand {
-    padding:0.5rem;
-}
-
-
 </style>
