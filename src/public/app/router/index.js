@@ -4,6 +4,7 @@ import LessonTitle from '../components/LessonTitle.vue';
 import LessonQuiz from '../components/LessonQuiz.vue';
 import LessonCompletion from '../components/Lesson-Completion.vue';
 import LessonContent from '../components/LessonContent.vue';
+import Registration from '../components/Registration.vue';
 
 
 export default new VueRouter({
