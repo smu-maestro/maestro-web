@@ -5,8 +5,8 @@ import router from './router/index.js';
 Parse.initialize("maestro", "orange");
 Parse.serverURL = 'http://maestro.dev:3308/parse';
 
-var TestObject = Parse.Object.extend("TestObject");
-var obj = new TestObject();
+// var TestObject = Parse.Object.extend("TestObject");
+// var obj = new TestObject();
 
 var app = new Vue({
     el: '#app',
@@ -14,16 +14,16 @@ var app = new Vue({
     template: '<App/>',
     components: { App },
     mounted: function () {
-        obj.save({
-            name: 'It works!'
-        },{
-            success: (obj) => {
-                console.log('save success');
-            },
-            error: (obj, err) => {
-                console.error('save error:');
-                console.error(err);
-            }
-        });
+        // obj.save({
+        //     name: 'It works!'
+        // },{
+        //     success: (obj) => {
+        //         console.log('save success');
+        //     },
+        //     error: (obj, err) => {
+        //         console.error('save error:');
+        //         console.error(err);
+        //     }
+        // });
     }
 });
