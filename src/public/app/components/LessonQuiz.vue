@@ -9,7 +9,7 @@
                 </audio>
                 </div>
                 <h2 class="lesson-quiz-question">{{ card.question }}</h2>
-                <div v-for="answer of card.answers" class="lesson-quiz-answer" :key="answer">
+                <div v-for="answer in card.answers" class="lesson-quiz-answer">
                 <label @click="check" v-bind:for="card.question">
                     <input type="radio"
                     v-bind:name="card.question"
