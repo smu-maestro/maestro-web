@@ -52,7 +52,12 @@ export default {
         this.lesson = result.attributes;
     }).catch((err) => {
       console.error(err);
-    })		
+    })
+    if (localStorage.getItem("currentslide")) {
+      this.cardNum = parseInt(localStorage.getItem("currentslide"));
+    }	else {
+      this.cardNum=0;
+    }	
   },
   methods: {
     next() {
@@ -60,7 +65,7 @@ export default {
       if( (this.cardNum+1) < this.lesson.content.length ) {
         console.log("in cardhi");
         this.cardNum = this.cardNum+1; 
-
+        localStorage.setItem("currentslide", this.cardNum);
       } else {
         this.$router.push({name: 'Completion'});
         //console.log("Done with lesson" + this.cardNum);
