@@ -14,7 +14,7 @@
                     <input type="radio"
                     v-bind:name="card.question"
                     v-bind:value="answer.correct"
-                    v-model="correct" unchecked> 
+                    v-model="this.correct" unchecked> 
                     {{answer.answer}}
                 </label>
                 </div>
