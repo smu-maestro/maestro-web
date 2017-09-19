@@ -1,0 +1,230 @@
+{
+  "title": "Rhythm",
+  "number": "2",
+  "content": [
+    {
+      "type": "content",
+      "text": "Rhythm in music is defined by beat values. These symbols represent different proportions of duration. A whole note is divided into half notes, which are then divided into quarter notes, etc. Each level in the beat tree is exactly half the duration of the note it stems from. ",
+      "image": "http://maestro.gdn/static/lesson_2/card0.png"
+    },
+    {
+      "type": "quiz",
+      "question": "What is this beat value?",
+      "image": "http://maestro.gdn/static/lesson_2/quiz0.png",
+      "answers": [
+        {
+          "answer": "Quarter note",
+          "correct": false
+        },
+        {
+          "answer": "Half note",
+          "correct": false
+        },
+        {
+          "answer": "Eighth Note",
+          "correct": true
+        },
+        {
+          "answer": "Sixteenth note",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "What is this beat value?",
+      "image": "http://maestro.gdn/static/lesson_2/quiz1.png",
+      "answers": [
+        {
+          "answer": "Half note",
+          "correct": false
+        },
+        {
+          "answer": "Whole note",
+          "correct": true
+        },
+        {
+          "answer": "Quarter note",
+          "correct": false
+        },
+        {
+          "answer": "Sixteenth note",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "text": "A slight addition to the note tree is the concept of dotting. When you put a dot after a note, you add half its duration to the beat value. Therefore, dotting a quarter note adds an eighth note to it or dotting a whole note adds a half-note.",
+      "image": "http://maestro.gdn/static/lesson_2/card1.png"
+    },
+    {
+      "type": "quiz",
+      "question": "How many quarter notes are in this beat?",
+      "image": "http://maestro.gdn/static/lesson_2/quiz2.png",
+      "answers": [
+        {
+          "answer": "1",
+          "correct": false
+        },
+        {
+          "answer": "2",
+          "correct": false
+        },
+        {
+          "answer": "3",
+          "correct": true
+        },
+        {
+          "answer": "4",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "text": "A common annotation you will see in music is barring. With beat values of 8th and below, one can group the notes using a bar, as seen above. With barred 16th notes, there is another line in the bar. Barring does not affect how you read music, merely how it is portrayed.",
+      "image": "http://maestro.gdn/static/lesson_2/card2.png"
+    },
+    {
+      "type": "content",
+      "text": "Just as there are beats to denote the sound of a note, there are symbols for the absence of music, or a rest. Rest durations correspond to note durations, e.g. a quarter rest is the same duration as a quarter note. A way to remember a whole versus half rest is a hole goes into the ground (therefore a whole rest goes down).",
+      "image": "http://maestro.gdn/static/lesson_2/card3.png"
+    },
+    {
+      "type": "quiz",
+      "question": "What is this rest value?",
+      "image": "http://maestro.gdn/static/lesson_2/quiz3.png",
+      "answers": [
+        {
+          "answer": "Quarter rest",
+          "correct": true
+        },
+        {
+          "answer": "Half rest",
+          "correct": false
+        },
+        {
+          "answer": "Eighth rest",
+          "correct": false
+        },
+        {
+          "answer": "Whole rest",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "What is this rest value?",
+      "image": "http://maestro.gdn/static/lesson_2/quiz4.png",
+      "answers": [
+        {
+          "answer": "Quarter rest",
+          "correct": false
+        },
+        {
+          "answer": "Half rest",
+          "correct": true
+        },
+        {
+          "answer": "Eighth rest",
+          "correct": false
+        },
+        {
+          "answer": "Whole rest",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "text": "Now that you know how rhythm is denoted in music, you need to know how it is organized. To organize music’s rhythm by its beats, we place the beats in bins we call measures.",
+      "image": "http://maestro.gdn/static/lesson_2/card4.png"
+    },
+    {
+      "type": "content",
+      "text": "The time signature is two numbers placed right after the clef that gives you information on the rhythm organization. We look at the time signature to know what rhythm duration combinations we can have in each measure. The top number is the number of beats (or counts) per measure. The bottom number is the rhythm value that gets the beat.",
+      "image": "http://maestro.gdn/static/lesson_2/card5.png"
+    },
+    {
+      "type": "content",
+      "text": "For the bottom numbers, 1 = whole note, 2 = half note, 4 = quarter note,  8 = 8th notes, 16 = 16th. So, in the top line, there are 2 beats per measure and a quarter note gets the beat — so any rhythm combination that adds up to 2 quarter notes in duration INCLUDING rests! In the second, there are 3 beats per measure and those 3 beats are 8th notes.",
+      "image": "http://maestro.gdn/static/lesson_2/card5.png"
+    },
+    {
+      "type": "quiz",
+      "question": "How many quarter notes can be in this measure?",
+      "image": "http://maestro.gdn/static/lesson_2/quiz5.png",
+      "answers": [
+        {
+          "answer": "1",
+          "correct": false
+        },
+        {
+          "answer": "2",
+          "correct": true
+        },
+        {
+          "answer": "4",
+          "correct": false
+        },
+        {
+          "answer": "None of the above",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "How many sixteenth notes can be in this measure?",
+      "image": "http://maestro.gdn/static/lesson_2/quiz6.png",
+      "answers": [
+        {
+          "answer": "3",
+          "correct": false
+        },
+        {
+          "answer": "6",
+          "correct": true
+        },
+        {
+          "answer": "9",
+          "correct": false
+        },
+        {
+          "answer": "12",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "text": "The time signature itself does not tell you the speed the beats are played at however. The speed the beats are played at is given by a tempo value. These tempo values are usually denoted by a beat value equaling a number at the top of the sheet music where the number represents beats per minute. Tempo values can also be denoted by a series of different Italian terms, as shown above.",
+      "image": "http://maestro.gdn/static/lesson_2/card6.png"
+    },
+    {
+      "type": "quiz",
+      "question": "How quickly would you play this music?",
+      "image": "http://maestro.gdn/static/lesson_2/quiz7.png",
+      "answers": [
+        {
+          "answer": "slowly",
+          "correct": false
+        },
+        {
+          "answer": "moderately slowly",
+          "correct": false
+        },
+        {
+          "answer": "quickly",
+          "correct": true
+        },
+        {
+          "answer": "very quickly",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}
