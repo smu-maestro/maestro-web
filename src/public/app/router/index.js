@@ -1,37 +1,34 @@
-import Home from '../components/Home.vue';
 import Lesson from '../components/Lesson.vue';
 import LessonTitle from '../components/LessonTitle.vue';
-import LessonQuiz from '../components/LessonQuiz.vue';
 import LessonCompletion from '../components/Lesson-Completion.vue';
 import LessonContent from '../components/LessonContent.vue';
+import TOC from '../components/TOC.vue'
 
 
 export default new VueRouter({
   routes: [
     {
-      path: '/title',
+      path: '/lesson:num/title',
       name: 'LessonTitle',
-      component: LessonTitle
+      component: LessonTitle,
+      props:true
     }, 
     {
-      path: '/lesson',
+      path: '/lesson:num',
       name: 'Lesson',
-      component: Lesson
+      component: Lesson,
+      props:true
     },
     {
-      path: '/quiz',
-      name: 'Quiz',
-      component: LessonQuiz
-    },
-    {
-      path: '/completion',
+      path: '/lesson:num/completion',
       name: 'Completion',
-      component: LessonCompletion
+      component: LessonCompletion,
+      props:true
     },
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'TOC',
+      component: TOC
     }
   ]
 })

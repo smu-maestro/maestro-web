@@ -1,25 +1,22 @@
 <template>
-    <div class="lesson-content-card">
-        <h1 class="lesson-content-title">{{ quiz.title }}</h1>
+    <div class="lesson-content">
             <div class="lesson-body">
                 <div class="lesson-content-image">
-					<img v-if="card.image"  :src= "card.image" class="lesson-img">
+					<img v-if="this.card.image"  :src= "this.card.image" class="lesson-img">
 				</div>
                 <audio class="lesson-content-audio" v-if="card.audio" id="player" controls>
                         <source :src="card.audio" type="audio.mp3">
                 </audio>
                 </div>
-                <h2 class="lesson-content-text">{{ card.question }}</h2>
-                    <ol>
-                        <li v-for="answer in card.answers">
-                            <label>
-                                <input type="radio" 
-                                        v-bind:value="answer.correct" 
-                                        v-bind:name="card.question" 
-                                        v-model="userAnswers[i]" > {{answer.text}} 
-                            </label>
-                        </li>
-                    </ol>
+                <h2 class="lesson-quiz-question">{{ card.question }}</h2>
+                <div v-for="answer in card.answers" class="lesson-quiz-answer">
+                <label v-bind:for="card.question">
+                    <input type="radio"
+                    v-bind:name="card.question"
+                    v-bind:value="answer.correct"> 
+                    {{answer.answer}}
+                </label>
+                </div>
         </div>
 </template>
 
@@ -73,6 +70,15 @@ export default {
     }
   },
   props: ['card'],
+  mounted() {
+      console.log("hi");
+      this.$emit('readyToSwipe', true);
+  },
+  watch: {
+    card: function() {
+        console.log(this.card);
+    }
+  },
   methods: {
     next: function() {
             this.questionIndex++;
@@ -90,64 +96,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-ol {
-    list-style-type:none;
-}
-
-img .lesson{
-  display:block;
-  margin:auto;
-  width:400px;
-}
-.lesson {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	padding: 0 1rem 1rem;
-}
-
-.lesson-content-card {
-	flex: 1;
-	padding: 3rem 1rem 0;
-	background-color: #F3F3F3;
-	display: flex;
-	flex-direction: column;
-}
-
-.lesson-content-card-content {
-	flex: 1;
-}
-
-.lesson-content-card-bar {
-	flex: 0;
-	padding: 0 0 1rem;
-	text-align: right;
-}
-
-.lesson-content-detail {
-	font-family: 'Montserrat', sans-serif;
-	text-transform: uppercase;
-	font-size: 1rem;
-	font-weight: 400;
-	opacity: 0.6;
-	margin-bottom: 0.5rem;
-}
-
-.lesson-content-title {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 2.5rem;
-	font-weight: 400;
-	margin-top: 0;
-}
-
-.button {
-  background-color:transparent;
-}
-
-.site-header {
-  	padding: 1rem 1rem 1rem;
-}
-</style>
