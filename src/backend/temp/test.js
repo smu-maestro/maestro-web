@@ -1,9 +1,9 @@
-const Parse = require('parse/node');
+var Parse = require('parse/node');
 const requireDir = require('require-dir');
 
-Parse.initialize('maestroBackend');
-Parse.masterKey = 'qwertyuiop';
-Parse.serverURL = 'http://localhost:1337/parse';
+Parse.initialize('maestro');
+Parse.masterKey = 'orange';
+Parse.serverURL = 'http://maestro.gdn/parse';
 
 var fuck = () => {
   var query1 = new Parse.Query('lesson');
@@ -60,4 +60,21 @@ var ass = () => {
   }
 }
 
-ass();
+// ass();
+
+var twat = () => {
+  var user = new Parse.User();
+  user.set('username', 'boris@boris.com');
+  user.set('password', 'fuckfuck');
+  user.signUp(null)
+  .then((user) => {
+    console.log('im in your area');
+    console.log(user);
+  })
+  .catch((err) => {
+    console.error('have a sad cum bb');
+    console.error(err);
+  });
+}
+
+twat();
