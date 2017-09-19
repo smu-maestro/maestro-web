@@ -1,63 +1,194 @@
 {
-  "title": "Lesson 1",
+  "title": "Musical Alphabet and Staff",
   "number": "1",
   "content": [
     {
       "type": "content",
-      "text": "The staff is a tool to graphically represent music\nIt consists of 5 lines and 4 spaces on which to plot notes\nEach line or space represents a letter in the musical alphabet",
-      "image": "http://localhost:1337/static/lesson_1/card0.png"
+      "text": "To learn how to play this piece of music, one needs to learn the language of composition. Sheet music is a tool for the composer to communicate their musical ideas with musicians. This language contains: notes (pitch),  rhythms (duration), tempo (speed), dynamics (volume), articulations (style).",
+      "image": "http://maestro.gdn/static/lesson_1/card0.png"
     },
     {
       "type": "content",
-      "text": "There are 7 letters that make up the musical alphabet: A, B, C, D, E, F, G.\nProgressing through all 7 notes in order makes a scale.\nThe letters restart after G, so the note after G is always A.\nThe simplest scale is the C Major Scale: C, D, E, F, G, A, B, C",
-      "image": "http://localhost:1337/static/lesson_1/card1.jpg"
-    },
-    {
-      "type": "content",
-      "text": "The clefs determine where the notes go on the staff\nThe treble clef (or “G” clef) looks like a cursive G, and denotes a G on the second line from the bottom: the “curl” of the G curls around the second line\nThe bass clef (or “F” clef) looks like a stylized F, with the two dots, or “lines”, of the F hugging the second line from the top of the staff",
-      "image": "http://localhost:1337/static/lesson_1/card2.png"
-    },
-    {
-      "type": "content",
-      "text": "If you need more lines on the staff than the allotted 5 lines and 4 spaces, one creates ledger lines as seen below. These continue at the same steps as the notes on the staff, for readability.",
-      "image": "http://localhost:1337/static/lesson_1/card3.jpg"
-    },
-    {
-      "type": "content",
-      "text": "Sharps and flats are notations in music that modify the note’s pitch by a half-step. Sharp means a half-step higher and flat means a half-step lower. Accidentals are the small symbols that appear before note-heads in the piece. Sharps and flats also appear in the key signature at the beginning of a piece.",
-      "image": "http://localhost:1337/static/lesson_1/card4.jpg"
-    },
-    {
-      "type": "content",
-      "text": "A key signature at the beginning of a piece or line of music tells you which notes are sharp and flat for consequent measures\nFor example, the key signature below (would be above) says that all G’s, C’s, and F’s are sharp.\nAccidentals are written before the note-head and change the pitch regardless of the key signature: e.g. a C sharp in the key signature denoted by an accidental as C flat is played as C flat",
-      "image": "http://localhost:1337/static/lesson_1/card4.png"
+      "text": "Notes represent specific pitches in sheet music. There are 7 note names that make up the musical alphabet: A, B, C, D, E, F, G. Going from one note to the next is called a step. The letters restart after G, so the note after G is always A."
     },
     {
       "type": "quiz",
-      "quizType": "multiNote"
+      "question": "How many note-names are in the musical alphabet?",
+      "answers": [
+        {
+          "answer": "6",
+          "correct": false
+        },
+        {
+          "answer": "7",
+          "correct": true
+        },
+        {
+          "answer": "8",
+          "correct": false
+        },
+        {
+          "answer": "9",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "text": "The staff is a tool to graphically represent the musical alphabet. It consists of 5 lines and 4 spaces on which to plot notes. Each line or space represents one note in the alphabet. Going from a space to an adjacent line or a line to an adjacent space is one step. As you move from the bottom of the staff up, the pitches get higher.",
+      "image": "http://maestro.gdn/static/lesson_1/card1.png"
+    },
+    {
+      "type": "content",
+      "text": "Composers use ledger lines to extend the staff when pitch goes beyond the bounds, allowing for higher and lower value representation. A particularly important ledger line to take note of is Middle C, the first note depicted.",
+      "image": "http://maestro.gdn/static/lesson_1/card2.png"
+    },
+    {
+      "type": "content",
+      "text": "There are symbols at the left side of the staff called a clef that tell readers which lines and spaces map to which notes. These clefs represent certain ranges of pitch. These clefs were developed to avoid something like a low-ranged instrument needing too many ledger lines. The two most common clefs are the treble and bass clefs.",
+      "image": "http://maestro.gdn/static/lesson_1/card3.png"
+    },
+    {
+      "type": "content",
+      "text": "The treble clef looks like a cursive G, and denotes a G on the second line from the bottom. You can remember this mapping, because the “curl” of the G curls around the second line. From the bottom up, lines are EGBDF (Every Good Boy Does Fine) and spaces are FACE (Face).",
+      "image": "http://maestro.gdn/static/lesson_1/card4.png"
     },
     {
       "type": "quiz",
-      "quizType": "multiNote"
-    }
-  ],
-  "quiz": [
+      "question": "Identify the note: ",
+      "image": "http://maestro.gdn/static/lesson_1/quiz0.png",
+      "answers": [
+        {
+          "answer": "D",
+          "correct": false
+        },
+        {
+          "answer": "E",
+          "correct": false
+        },
+        {
+          "answer": "F",
+          "correct": false
+        },
+        {
+          "answer": "G",
+          "correct": true
+        }
+      ]
+    },
     {
-      "type": "multiNote",
+      "type": "quiz",
+      "question": "Identify the note: ",
+      "image": "http://maestro.gdn/static/lesson_1/quiz1.png",
+      "answers": [
+        {
+          "answer": "A",
+          "correct": false
+        },
+        {
+          "answer": "B",
+          "correct": false
+        },
+        {
+          "answer": "C",
+          "correct": true
+        },
+        {
+          "answer": "D",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "quiz",
       "question": "Identify the notes: ",
-      "image": "http://localhost:1337/static/lesson_1/quiz0.jpg",
+      "image": "http://maestro.gdn/static/lesson_1/quiz2.png",
+      "answers": [
+        {
+          "answer": "D, F, A, C",
+          "correct": false
+        },
+        {
+          "answer": "B, G, D, F",
+          "correct": false
+        },
+        {
+          "answer": "B, D, F, A",
+          "correct": true
+        },
+        {
+          "answer": "G, B, A, C",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "text": "The bass clef looks like a stylized F, and denotes F as the second line from the top of the staff. You can remember this mapping because the two dots of the clef hug the second line from the top. From the bottom up, lines are GBDFA (Good Boys Do Fine Always) and spaces are ACEG (All Cows Eat Grass).",
+      "image": "http://maestro.gdn/static/lesson_1/card5.png"
+    },
+    {
+      "type": "quiz",
+      "question": "Identify the note: ",
+      "image": "http://maestro.gdn/static/lesson_1/quiz3.png",
+      "answers": [
+        {
+          "answer": "D",
+          "correct": true
+        },
+        {
+          "answer": "E",
+          "correct": false
+        },
+        {
+          "answer": "F",
+          "correct": false
+        },
+        {
+          "answer": "G",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Identify the note: ",
+      "image": "http://maestro.gdn/static/lesson_1/quiz4.png",
+      "answers": [
+        {
+          "answer": "A",
+          "correct": true
+        },
+        {
+          "answer": "B",
+          "correct": false
+        },
+        {
+          "answer": "C",
+          "correct": false
+        },
+        {
+          "answer": "D",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "quiz",
+      "question": "Identify the notes: ",
+      "image": "http://maestro.gdn/static/lesson_1/quiz5.png",
       "answers": [
         {
           "answer": "F, C, A, G",
           "correct": false
         },
         {
-          "answer": "E, D, G, A",
-          "correct": false
+          "answer": "G, C, F, E",
+          "correct": true
         },
         {
-          "answer": "F, E, A, G",
-          "correct": true
+          "answer": "G, B, A, F",
+          "correct": false
         },
         {
           "answer": "F, E, A, C",
@@ -66,27 +197,29 @@
       ]
     },
     {
-      "type": "multiNote",
-      "question": "Identify the notes: ",
-      "image": "http://localhost:1337/static/lesson_1/quiz1.jpg",
+      "type": "content",
+      "text": "Now that we’ve learned how notes map to the staff, we can start learning how to modify the notes. Sharps and flats are notations in music that modify the note’s pitch by a half-step. Sharp means a half-step higher and flat means a half-step lower. We call the sharps and flats before noteheads accidentals.",
+      "image": "http://maestro.gdn/static/lesson_1/card6.png"
+    },
+    {
+      "type": "quiz",
+      "question": "Is this note's pitch higher or lower?",
+      "image": "http://maestro.gdn/static/lesson_1/quiz6.png",
       "answers": [
         {
-          "answer": "F, C, A, G",
-          "correct": false
-        },
-        {
-          "answer": "G, A, B, E",
+          "answer": "higher",
           "correct": true
         },
         {
-          "answer": "F, E, A, G",
-          "correct": false
-        },
-        {
-          "answer": "F, E, A, C",
-          "correct": false
+          "answer": "lower",
+          "correct": true
         }
       ]
+    },
+    {
+      "type": "content",
+      "text": "Sharps and flats at the beginning of the piece make up the key signature. The key signature determines which notes are implicitly sharp or flat, unless otherwise specified by an accidental. This key signature says that all G’s, C’s, and F’s are sharp. So, if you see a C with the accidental ‘♮’ before it is played as C♮ regardless of the key signature.",
+      "image": "http://maestro.gdn/static/lesson_1/card7.png"
     }
   ]
 }
