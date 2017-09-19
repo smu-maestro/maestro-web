@@ -10,10 +10,11 @@
                 </div>
                 <h2 class="lesson-quiz-question">{{ card.question }}</h2>
                 <div v-for="answer in card.answers" class="lesson-quiz-answer">
-                <label v-bind:for="card.question">
+                <label @click="check" v-bind:for="card.question">
                     <input type="radio"
                     v-bind:name="card.question"
-                    v-bind:value="answer.correct"> 
+                    v-bind:value="answer.correct"
+                    v-model="correct" unchecked> 
                     {{answer.answer}}
                 </label>
                 </div>
@@ -66,13 +67,14 @@ export default {
     return {
         quiz: quiz,
         questionIndex: 0,
-        userAnswers: Array(quiz.questions.length).fill(false)
+        userAnswers: Array(quiz.questions.length).fill(false),
+        correct: false
     }
   },
   props: ['card'],
   mounted() {
       console.log("hi");
-      this.$emit('readyToSwipe', true);
+      this.$emit('readyToSwipe', false);
   },
   watch: {
     card: function() {
@@ -91,8 +93,14 @@ export default {
     },
     finish() {
        this.$router.push({name: 'LessonTitle'});
+    },
+    check() {
+        this.$emit('readyToSwipe', this.correct);
     }
 
   }
 }
 </script>
+<style>
+
+</style>
