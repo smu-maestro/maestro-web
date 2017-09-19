@@ -30,10 +30,10 @@
     {
       "type": "content",
       "text": "A key signature at the beginning of a piece or line of music tells you which notes are sharp and flat for consequent measures For example, the key signature below (would be above) says that all G’s, C’s, and F’s are sharp. Accidentals are written before the note-head and change the pitch regardless of the key signature: e.g. a C sharp in the key signature denoted by an accidental as C flat is played as C flat",
-      "image": "http://maestro.gdn/static/lesson_1/card4.png"
+      "image": "http://maestro.gdn/static/lesson_1/card5.png"
     },
     {
-      "type": "multiNote",
+      "type": "quiz",
       "question": "Identify the notes: ",
       "image": "http://maestro.gdn/static/lesson_1/quiz0.jpg",
       "answers": [
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "type": "multiNote",
+      "type": "quiz",
       "question": "Identify the notes: ",
       "image": "http://maestro.gdn/static/lesson_1/quiz1.jpg",
       "answers": [
