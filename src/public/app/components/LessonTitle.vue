@@ -73,6 +73,7 @@ export default {
     }).catch((err) => {
       console.error(err);
     })
+    localStorage.clear();
   },
   methods: {
     next() {

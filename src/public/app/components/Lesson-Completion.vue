@@ -24,6 +24,7 @@ export default {
   props: ['num'],
   methods:{
     finish() {
+       localStorage.clear();
        this.$router.push({name: 'Home'});
     }
   }
