@@ -34,7 +34,7 @@ var lesson = {
 
 export default {
   name: 'lesson',
-  data() {
+  data: function() {
     return {
       lesson:lesson,
       cardNum:0,
@@ -66,8 +66,11 @@ export default {
         console.log("in cardhi");
         this.cardNum = this.cardNum+1; 
         localStorage.setItem("currentslide", this.cardNum);
-      } else {
+      } else if ((this.cardNum+1) == this.lesson.content.length){
         this.$router.push({name: 'Completion'});
+      } else {
+        console.log("eror");
+        //this.$router.push({name: 'Completion'});
         //console.log("Done with lesson" + this.cardNum);
         //this.cardNum = this.cardNum+1;
       }
@@ -79,6 +82,7 @@ export default {
     },
     prev() {
       this.cardNum = this.cardNum-1;
+      this.isDisabled = false;
     },
     finish() {
        this.$router.push({name: 'Home', num:current});

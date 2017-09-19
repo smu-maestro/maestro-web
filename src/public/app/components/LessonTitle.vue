@@ -56,7 +56,7 @@ var lesson = {
 
 export default {
   name: 'LessonTitle',
-  data () {
+  data: function() {
     return {
       lesson:lesson,
       current:0,
