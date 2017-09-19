@@ -12,7 +12,7 @@
                 <div v-for="answer of card.answers" class="lesson-quiz-answer" :key="answer">
                 <label @click="check" v-bind:for="card.question">
                     <input type="radio"
-                    v-bind:name="card.question"
+                    name="quiz"
                     v-bind:value="answer.correct"
                     v-model="this.correct"> 
                     {{answer.answer}}
