@@ -3,7 +3,7 @@
         <section class="table-of-contents">
                 <div v-for="lesson in lessons">
                     <div class="card" @click="select(lesson.attributes.number)">
-                        <h2 class="lesson-num">LESSON {{ lesson.attributes.number }}</h2>
+                        <h2 class="lesson-num">hi LESSON {{ lesson.attributes.number }}</h2>
                         <h3 class="lesson-name">{{ lesson.attributes.title }}</h3>
                     </div>
 
@@ -15,7 +15,7 @@
 <script>
 export default {
     name: 'TOC',
-    data () {
+    data: function() {
         return {
             lessons: []
         }

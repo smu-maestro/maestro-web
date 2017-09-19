@@ -15,7 +15,7 @@ var lesson = {
 export default {
   name: 'ProgressBar',
   props: ['num', 'total'],
-  data () {
+  data:function () {
     return {
       lesson: lesson,
       width: 0

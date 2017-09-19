@@ -14,7 +14,7 @@
                     <input type="radio"
                     v-bind:name="card.question"
                     v-bind:value="answer.correct"
-                    v-model="correct"> 
+                    v-model="correct" unchecked> 
                     {{answer.answer}}
                 </label>
                 </div>
@@ -63,7 +63,7 @@ var quiz = {
 
 export default {
   name: 'LessonQuiz',
-  data () {
+  data: function () {
     return {
         quiz: quiz,
         questionIndex: 0,
