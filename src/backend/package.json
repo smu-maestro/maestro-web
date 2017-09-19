@@ -4,7 +4,7 @@
   "description": "Parse backend + static file hosting for Maestro",
   "main": "app.js",
   "scripts": {
-    "test": "mocha",
+    "test": "jest",
     "start": "node ./app.js"
   },
   "author": "Maestro Backend Team",
